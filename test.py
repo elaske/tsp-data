@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-22 00:49:32
+# @Last Modified time: 2014-02-22 01:29:16
 
 import urllib2
 # or if you're using BeautifulSoup4:
@@ -23,7 +23,19 @@ html_string = fp.read()
 # http://stackoverflow.com/questions/13965612/beautifulsoup-htmlparseerror-whats-wrong-with-this
 soup = BeautifulSoup(html_string)
 #print soup
-#print soup.find_all('table', class_="tspStandard")
-for row in soup('table', class_='tspStandard')[0].tbody('tr'):
-    tds = row('td')
-    print tds
+
+tsp_table = soup('table', class_='tspStandard')
+#print tsp_table
+#print tsp_table[0].tbody
+tsp_table_rows = tsp_table[0].tbody('tr')
+#print tsp_table_rows
+
+for row in tsp_table_rows:
+    #print row
+    # Save the header strings
+    if row('th'):
+        header = [c.string.strip() for c in row('th')]
+        print len(header), header
+    else:
+        row_data = [c.string.strip() for c in row('td')]
+        print len(row_data), row_data
