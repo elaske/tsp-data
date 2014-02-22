@@ -1,0 +1,297 @@
+<div class="content" id="content">
+        <!-- CONTENT START -->
+
+
+<p>To understand how the TSP calculates rates of return for any given period of time and determines compound annual returns, read the Fact Sheet <a class="pdfLink" href="/PDF/formspubs/oc05-16w.pdf">Calculating Periodic Returns and Compound Annual Returns<img src="/resources/images/icon_pdf_tiny.gif" alt="PDF document" title="PDF document opens in a new window" width="18" height="15"></a>.</p>
+
+<div class="sharePriceHistoryButtons">
+  <form class="navigation" name="submit" method="post" action=""> 
+     <!-- <div class="csvLinkDiv"><a id="csvLink" href="javascript:alert('Go To Export to CSV file');">Export to CSV file</a></div> -->
+       <div class="sharePriceHistoryButtonGroup1">
+        <table>
+          <tbody><tr>
+          <td>Start Date:</td><td><title="select start="" date"=""><label>
+<select size="1" name="startdate">
+    <option value="20140203">Feb 03, 2014</option>
+    <option value="20140102">Jan 02, 2014</option>
+    <option value="20131202">Dec 02, 2013</option>
+    <option value="20131101">Nov 01, 2013</option>
+    <option value="20131001">Oct 01, 2013</option>
+    <option value="20130903">Sep 03, 2013</option>
+    <option value="20130801">Aug 01, 2013</option>
+    <option value="20130701">Jul 01, 2013</option>
+    <option value="20130603">Jun 03, 2013</option>
+    <option value="20130501">May 01, 2013</option>
+    <option value="20130401">Apr 01, 2013</option>
+    <option value="20130301">Mar 01, 2013</option>
+    <option value="20130201">Feb 01, 2013</option>
+    <option value="20130102">Jan 02, 2013</option>
+    <option value="20121203">Dec 03, 2012</option>
+    <option value="20121101">Nov 01, 2012</option>
+    <option value="20121001">Oct 01, 2012</option>
+    <option value="20120904">Sep 04, 2012</option>
+    <option value="20120801">Aug 01, 2012</option>
+    <option value="20120702">Jul 02, 2012</option>
+    <option value="20120601">Jun 01, 2012</option>
+    <option value="20120501">May 01, 2012</option>
+    <option value="20120402">Apr 02, 2012</option>
+    <option value="20120301">Mar 01, 2012</option>
+    <option value="20120201">Feb 01, 2012</option>
+    <option value="20120103">Jan 03, 2012</option>
+    <option value="20111201">Dec 01, 2011</option>
+    <option value="20111101">Nov 01, 2011</option>
+    <option value="20111003">Oct 03, 2011</option>
+    <option value="20110901">Sep 01, 2011</option>
+    <option value="20110801">Aug 01, 2011</option>
+    <option value="20110701">Jul 01, 2011</option>
+    <option value="20110601">Jun 01, 2011</option>
+    <option value="20110502">May 02, 2011</option>
+    <option value="20110401">Apr 01, 2011</option>
+    <option value="20110301">Mar 01, 2011</option>
+    <option value="20110201">Feb 01, 2011</option>
+    <option value="20110103">Jan 03, 2011</option>
+    <option value="20101201">Dec 01, 2010</option>
+    <option value="20101101">Nov 01, 2010</option>
+    <option value="20101001">Oct 01, 2010</option>
+    <option value="20100901">Sep 01, 2010</option>
+    <option value="20100802">Aug 02, 2010</option>
+    <option value="20100701">Jul 01, 2010</option>
+    <option value="20100601">Jun 01, 2010</option>
+    <option value="20100503">May 03, 2010</option>
+    <option value="20100401">Apr 01, 2010</option>
+    <option value="20100301">Mar 01, 2010</option>
+    <option value="20100201">Feb 01, 2010</option>
+    <option value="20100104">Jan 04, 2010</option>
+    <option value="20091201">Dec 01, 2009</option>
+    <option value="20091102">Nov 02, 2009</option>
+    <option value="20091001">Oct 01, 2009</option>
+    <option value="20090901">Sep 01, 2009</option>
+    <option value="20090803">Aug 03, 2009</option>
+    <option value="20090701">Jul 01, 2009</option>
+    <option value="20090601">Jun 01, 2009</option>
+    <option value="20090501">May 01, 2009</option>
+    <option value="20090401">Apr 01, 2009</option>
+    <option value="20090302">Mar 02, 2009</option>
+    <option value="20090202">Feb 02, 2009</option>
+    <option value="20090102">Jan 02, 2009</option>
+    <option value="20081201">Dec 01, 2008</option>
+    <option value="20081103">Nov 03, 2008</option>
+    <option value="20081001">Oct 01, 2008</option>
+    <option value="20080902">Sep 02, 2008</option>
+    <option value="20080801">Aug 01, 2008</option>
+    <option value="20080701">Jul 01, 2008</option>
+    <option value="20080602">Jun 02, 2008</option>
+    <option value="20080501">May 01, 2008</option>
+    <option value="20080401">Apr 01, 2008</option>
+    <option value="20080303">Mar 03, 2008</option>
+    <option value="20080201">Feb 01, 2008</option>
+    <option value="20080102">Jan 02, 2008</option>
+    <option value="20071203">Dec 03, 2007</option>
+    <option value="20071101">Nov 01, 2007</option>
+    <option value="20071001">Oct 01, 2007</option>
+    <option value="20070904">Sep 04, 2007</option>
+    <option value="20070801">Aug 01, 2007</option>
+    <option value="20070702">Jul 02, 2007</option>
+    <option value="20070601">Jun 01, 2007</option>
+    <option value="20070501">May 01, 2007</option>
+    <option value="20070402">Apr 02, 2007</option>
+    <option value="20070301">Mar 01, 2007</option>
+    <option value="20070201">Feb 01, 2007</option>
+    <option value="20070103">Jan 03, 2007</option>
+    <option value="20061201">Dec 01, 2006</option>
+    <option value="20061101">Nov 01, 2006</option>
+    <option value="20061002">Oct 02, 2006</option>
+    <option value="20060901">Sep 01, 2006</option>
+    <option value="20060801">Aug 01, 2006</option>
+    <option value="20060703">Jul 03, 2006</option>
+    <option value="20060601">Jun 01, 2006</option>
+    <option value="20060501">May 01, 2006</option>
+    <option value="20060403">Apr 03, 2006</option>
+    <option value="20060301">Mar 01, 2006</option>
+    <option value="20060201">Feb 01, 2006</option>
+    <option value="20060103">Jan 03, 2006</option>
+    <option value="20051201">Dec 01, 2005</option>
+    <option value="20051101">Nov 01, 2005</option>
+    <option value="20051003">Oct 03, 2005</option>
+    <option value="20050901">Sep 01, 2005</option>
+    <option value="20050801">Aug 01, 2005</option>
+    <option value="20050701">Jul 01, 2005</option>
+    <option value="20050601">Jun 01, 2005</option>
+    <option value="20050502">May 02, 2005</option>
+    <option value="20050401">Apr 01, 2005</option>
+    <option value="20050301">Mar 01, 2005</option>
+    <option value="20050201">Feb 01, 2005</option>
+    <option value="20050103">Jan 03, 2005</option>
+    <option value="20041201">Dec 01, 2004</option>
+    <option value="20041101">Nov 01, 2004</option>
+    <option value="20041001">Oct 01, 2004</option>
+    <option value="20040901">Sep 01, 2004</option>
+    <option value="20040802">Aug 02, 2004</option>
+    <option value="20040701">Jul 01, 2004</option>
+    <option value="20040601">Jun 01, 2004</option>
+    <option value="20040503">May 03, 2004</option>
+    <option value="20040401">Apr 01, 2004</option>
+    <option value="20040301">Mar 01, 2004</option>
+    <option value="20040202">Feb 02, 2004</option>
+    <option value="20040102">Jan 02, 2004</option>
+    <option value="20031201">Dec 01, 2003</option>
+    <option value="20031103">Nov 03, 2003</option>
+    <option value="20031001">Oct 01, 2003</option>
+    <option value="20030902">Sep 02, 2003</option>
+    <option value="20030801">Aug 01, 2003</option>
+    <option value="20030701">Jul 01, 2003</option>
+    <option selected="" value="20030602">Jun 02, 2003</option>
+
+</select></label></title="select></td> 
+          <td>End Date:</td><td><title="select end="" date"=""><label>
+<select size="1" name="enddate">
+    <option selected="" value="20140221">Feb 21, 2014</option>
+    <option value="20140131">Jan 31, 2014</option>
+    <option value="20131231">Dec 31, 2013</option>
+    <option value="20131129">Nov 29, 2013</option>
+    <option value="20131031">Oct 31, 2013</option>
+    <option value="20130930">Sep 30, 2013</option>
+    <option value="20130830">Aug 30, 2013</option>
+    <option value="20130731">Jul 31, 2013</option>
+    <option value="20130628">Jun 28, 2013</option>
+    <option value="20130531">May 31, 2013</option>
+    <option value="20130430">Apr 30, 2013</option>
+    <option value="20130328">Mar 28, 2013</option>
+    <option value="20130228">Feb 28, 2013</option>
+    <option value="20130131">Jan 31, 2013</option>
+    <option value="20121231">Dec 31, 2012</option>
+    <option value="20121130">Nov 30, 2012</option>
+    <option value="20121031">Oct 31, 2012</option>
+    <option value="20120928">Sep 28, 2012</option>
+    <option value="20120831">Aug 31, 2012</option>
+    <option value="20120731">Jul 31, 2012</option>
+    <option value="20120629">Jun 29, 2012</option>
+    <option value="20120531">May 31, 2012</option>
+    <option value="20120430">Apr 30, 2012</option>
+    <option value="20120330">Mar 30, 2012</option>
+    <option value="20120229">Feb 29, 2012</option>
+    <option value="20120131">Jan 31, 2012</option>
+    <option value="20111230">Dec 30, 2011</option>
+    <option value="20111130">Nov 30, 2011</option>
+    <option value="20111031">Oct 31, 2011</option>
+    <option value="20110930">Sep 30, 2011</option>
+    <option value="20110831">Aug 31, 2011</option>
+    <option value="20110729">Jul 29, 2011</option>
+    <option value="20110630">Jun 30, 2011</option>
+    <option value="20110531">May 31, 2011</option>
+    <option value="20110429">Apr 29, 2011</option>
+    <option value="20110331">Mar 31, 2011</option>
+    <option value="20110228">Feb 28, 2011</option>
+    <option value="20110131">Jan 31, 2011</option>
+    <option value="20101231">Dec 31, 2010</option>
+    <option value="20101130">Nov 30, 2010</option>
+    <option value="20101029">Oct 29, 2010</option>
+    <option value="20100930">Sep 30, 2010</option>
+    <option value="20100831">Aug 31, 2010</option>
+    <option value="20100730">Jul 30, 2010</option>
+    <option value="20100630">Jun 30, 2010</option>
+    <option value="20100528">May 28, 2010</option>
+    <option value="20100430">Apr 30, 2010</option>
+    <option value="20100331">Mar 31, 2010</option>
+    <option value="20100226">Feb 26, 2010</option>
+    <option value="20100129">Jan 29, 2010</option>
+    <option value="20091231">Dec 31, 2009</option>
+    <option value="20091130">Nov 30, 2009</option>
+    <option value="20091030">Oct 30, 2009</option>
+    <option value="20090930">Sep 30, 2009</option>
+    <option value="20090831">Aug 31, 2009</option>
+    <option value="20090731">Jul 31, 2009</option>
+    <option value="20090630">Jun 30, 2009</option>
+    <option value="20090529">May 29, 2009</option>
+    <option value="20090430">Apr 30, 2009</option>
+    <option value="20090331">Mar 31, 2009</option>
+    <option value="20090227">Feb 27, 2009</option>
+    <option value="20090130">Jan 30, 2009</option>
+    <option value="20081231">Dec 31, 2008</option>
+    <option value="20081128">Nov 28, 2008</option>
+    <option value="20081031">Oct 31, 2008</option>
+    <option value="20080930">Sep 30, 2008</option>
+    <option value="20080829">Aug 29, 2008</option>
+    <option value="20080731">Jul 31, 2008</option>
+    <option value="20080630">Jun 30, 2008</option>
+    <option value="20080530">May 30, 2008</option>
+    <option value="20080430">Apr 30, 2008</option>
+    <option value="20080331">Mar 31, 2008</option>
+    <option value="20080229">Feb 29, 2008</option>
+    <option value="20080131">Jan 31, 2008</option>
+    <option value="20071231">Dec 31, 2007</option>
+    <option value="20071130">Nov 30, 2007</option>
+    <option value="20071031">Oct 31, 2007</option>
+    <option value="20070928">Sep 28, 2007</option>
+    <option value="20070831">Aug 31, 2007</option>
+    <option value="20070731">Jul 31, 2007</option>
+    <option value="20070629">Jun 29, 2007</option>
+    <option value="20070531">May 31, 2007</option>
+    <option value="20070430">Apr 30, 2007</option>
+    <option value="20070330">Mar 30, 2007</option>
+    <option value="20070228">Feb 28, 2007</option>
+    <option value="20070131">Jan 31, 2007</option>
+    <option value="20061229">Dec 29, 2006</option>
+    <option value="20061130">Nov 30, 2006</option>
+    <option value="20061031">Oct 31, 2006</option>
+    <option value="20060929">Sep 29, 2006</option>
+    <option value="20060831">Aug 31, 2006</option>
+    <option value="20060731">Jul 31, 2006</option>
+    <option value="20060630">Jun 30, 2006</option>
+    <option value="20060531">May 31, 2006</option>
+    <option value="20060428">Apr 28, 2006</option>
+    <option value="20060331">Mar 31, 2006</option>
+    <option value="20060228">Feb 28, 2006</option>
+    <option value="20060131">Jan 31, 2006</option>
+    <option value="20051230">Dec 30, 2005</option>
+    <option value="20051130">Nov 30, 2005</option>
+    <option value="20051031">Oct 31, 2005</option>
+    <option value="20050930">Sep 30, 2005</option>
+    <option value="20050831">Aug 31, 2005</option>
+    <option value="20050729">Jul 29, 2005</option>
+    <option value="20050630">Jun 30, 2005</option>
+    <option value="20050531">May 31, 2005</option>
+    <option value="20050429">Apr 29, 2005</option>
+    <option value="20050331">Mar 31, 2005</option>
+    <option value="20050228">Feb 28, 2005</option>
+    <option value="20050131">Jan 31, 2005</option>
+    <option value="20041231">Dec 31, 2004</option>
+    <option value="20041130">Nov 30, 2004</option>
+    <option value="20041029">Oct 29, 2004</option>
+    <option value="20040930">Sep 30, 2004</option>
+    <option value="20040831">Aug 31, 2004</option>
+    <option value="20040730">Jul 30, 2004</option>
+    <option value="20040630">Jun 30, 2004</option>
+    <option value="20040528">May 28, 2004</option>
+    <option value="20040430">Apr 30, 2004</option>
+    <option value="20040331">Mar 31, 2004</option>
+    <option value="20040227">Feb 27, 2004</option>
+    <option value="20040130">Jan 30, 2004</option>
+    <option value="20031231">Dec 31, 2003</option>
+    <option value="20031128">Nov 28, 2003</option>
+    <option value="20031031">Oct 31, 2003</option>
+    <option value="20030930">Sep 30, 2003</option>
+    <option value="20030829">Aug 29, 2003</option>
+    <option value="20030731">Jul 31, 2003</option>
+    <option value="20030630">Jun 30, 2003</option>
+
+</select></label></title="select></td>
+          <td><input name="Retrieve" align="left" type="image" src="/resources/images/btn_RetrieveSharePrices.gif" alt="Retrieve Share Prices" value="Retrieve Share Prices"></td>
+         </tr>
+        </tbody></table>
+       </div>
+     <div class="clear"></div>
+   <div class="sharePriceHistoryButtonGroup2">
+             
+             <input name="prev" type="hidden" value="0"> 
+             <input name="next" type="hidden" value="30">  
+              <input name="prev" type="image" src="/resources/images/btn_Previous30Days.gif" alt="Previous 30 Days" value="Next 30 Days&gt;&gt;">
+ 
+           <input name="submit" type="image" src="/resources/images/btn_Next30Days_disabled.gif" alt="Next 30 Days: Disabled" value="30" disabled="">    
+           
+             
+
+  
+  </div>
+  </form>
+</div>
