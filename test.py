@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-22 01:29:16
+# @Last Modified time: 2014-02-22 12:12:01
 
 import urllib2
 # or if you're using BeautifulSoup4:
@@ -30,6 +30,9 @@ tsp_table = soup('table', class_='tspStandard')
 tsp_table_rows = tsp_table[0].tbody('tr')
 #print tsp_table_rows
 
+header = []
+data_dict = {}
+
 for row in tsp_table_rows:
     #print row
     # Save the header strings
@@ -38,4 +41,12 @@ for row in tsp_table_rows:
         print len(header), header
     else:
         row_data = [c.string.strip() for c in row('td')]
-        print len(row_data), row_data
+        #print len(row_data), row_data
+        data_dict[row_data[0]] = row_data[1:-1]
+
+#print data_dict
+
+start_date_select = soup('select', attrs={"name": "startdate"})
+#print start_date_select
+end_date_select = soup('select', attrs={"name": "enddate"})
+#print end_date_select
