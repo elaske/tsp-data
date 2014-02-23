@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-22 22:23:02
+# @Last Modified time: 2014-02-22 23:02:11
 
 import urllib
 import urllib2
@@ -19,6 +19,10 @@ import pytz
 
 # TSP results are from the eastern time zone.
 eastern = timezone('US/Eastern')
+
+# TSP's earliest records online of share prices Jun 2, 2003.
+earliest = datetime(2003, 6, 2)
+#print earliest
 
 # NOTE: Share prices are updated each business day at approximately 7:00 p.m., Eastern time.
 # (https://www.tsp.gov/PDF/formspubs/oc03-11.pdf)
@@ -54,7 +58,7 @@ for row in tsp_table_rows:
     if row('th'):
         header = [c.string.strip() for c in row('th')]
         data_dict[header[0]] = header[1:-1]
-        print len(header), header
+        #print len(header), header
     else:
         row_data = [c.string.strip() for c in row('td')]
         #print len(row_data), row_data
@@ -63,9 +67,9 @@ for row in tsp_table_rows:
 #print data_dict
 
 # Gets the current date / time in eastern time zone
-print datetime.now(eastern).strftime('%b %d, %Y')
+#print datetime.now(eastern).strftime('%b %d, %Y')
 # Gets current date / time in current time zone
-print datetime.now().strftime('%b %d, %Y')
+#print datetime.now().strftime('%b %d, %Y')
 
 start_date_select = soup('select', attrs={"name": "startdate"})
 #print start_date_select
@@ -103,8 +107,8 @@ form_data = {
 params = urllib.urlencode(form_data)
 #print params
 # Open a virtual file pointer to the URL with the query string and read.
-fp = urllib2.urlopen(url, params)
-html_string = fp.read()
+#fp = urllib2.urlopen(url, params)
+#html_string = fp.read()
 #print html_string
 
 soup = BeautifulSoup(html_string)
@@ -117,4 +121,41 @@ for row in tsp_table_rows:
         #print len(row_data), row_data
         data_dict[row_data[0]] = row_data[1:-1]
 
-print data_dict
+#print data_dict
+
+# Obtain the prev hidden input and catch if there's been a change with new hidden values.
+temp = soup('input', attrs={'name':'prev','type':'hidden'})
+if len(temp) == 1:
+    prev_hidden = temp[0]['value']
+else:
+    print 'ERROR: Wrong number of hidden inputs: {0}'.format(temp)
+
+# Obtain the next hidden input and catch if there's been a change with new hidden values.
+temp = soup('input', attrs={'name':'next','type':'hidden'})
+if len(temp) == 1:
+    next_hidden = temp[0]['value']
+else:
+    print 'ERROR: Wrong number of hidden inputs: {0}'.format(temp)
+
+print prev_hidden, next_hidden
+
+
+# Obtain the prev image input and catch if it's been disabled or there's been a change in the TSP site.
+temp = soup('input', attrs={'name':'prev','type':'image'})
+if len(temp) == 1:
+    prev_string = temp[0]['value']
+elif len(temp) > 1:
+    print 'ERROR: Wrong number of image inputs: {0}'.format(temp)
+else:
+    prev_string = 'disabled'
+
+# Obtain the prev image input and catch if it's been disabled or there's been a change in the TSP site.
+temp = soup('input', attrs={'name':'next','type':'image'})
+if len(temp) == 1:
+    next_string = temp[0]['value']
+elif len(temp) > 1:
+    print 'ERROR: Wrong number of image inputs: {0}'.format(temp)
+else:
+    next_string = 'disabled'
+
+print prev_string, next_string
