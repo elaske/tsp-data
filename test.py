@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-22 23:17:06
+# @Last Modified time: 2014-02-22 23:37:05
 
 import urllib
 import urllib2
@@ -125,6 +125,17 @@ def main():
 
     #print data_dict
 
+    print getNavigationFormData.__doc__
+
+def getNavigationFormData(soup, time_dir="-"):
+    """
+    Gets the form data tuple to be encoded to navigate forward or backward in time.
+
+    Arguments:
+    soup -- BeautifulSoup4 initialized soup
+    time_dir -- Optional time direction specification. Defaults to backward.
+                '+' is forward in time. '-' is backward in time.
+    """
     # Obtain the prev hidden input and catch if there's been a change with new hidden values.
     temp = soup('input', attrs={'name':'prev','type':'hidden'})
     if len(temp) == 1:
