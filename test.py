@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-23 14:14:17
+# @Last Modified time: 2014-02-23 15:50:01
 
 import urllib
 import urllib2
@@ -30,7 +30,42 @@ def main():
     # (https://www.tsp.gov/PDF/formspubs/oc03-11.pdf)
 
     # Start of TSP recorded data
+    url = 'https://www.tsp.gov/investmentfunds/shareprice/sharePriceHistory.shtml'
+    form_data = {'next':'30','prev':'0'}    # Default form data, innocuous, but non-{}
 
+    rows = 0
+    while form_data:
+        print 'Retrieving next 30 days ({} - {})'.format(rows, rows + 30)
+        # Encode the form data into a URL query string
+        params = urllib.urlencode(form_data)
+        # Open a virtual file pointer to the URL with the query string and read.
+        fp = urllib2.urlopen(url, params)
+        html_string = fp.read()
+        # Load the string into BeautifulSoup for parsing.
+        # This works with the malformed HTML if html5lib packags is installed. See:
+        # http://stackoverflow.com/questions/13965612/beautifulsoup-htmlparseerror-whats-wrong-with-this
+        soup = BeautifulSoup(html_string)
+        # Extract all of the data from the soup
+        (data_dict, header) = extractDataFromSoup(soup)
+        print data_dict
+        date_strings = data_dict.keys()
+        #print date_strings
+        dates = [datetime.strptime(k, "%b %d, %Y") for k in date_strings]
+        dates = sorted(dates)
+        #print dates
+        print "{0} to {1} extraction completed successfully.".format(
+            dates[0].strftime('%b %d, %Y'),
+            dates[-1].strftime('%b %d, %Y'))
+        # Get the next set of form data to use
+        form_data = getNavigationFormData(soup)
+        #print form_data
+        rows += 30
+
+    print 'Completed extraction. Form data = {0}'.format(form_data)
+
+
+def test():
+    # Start of TSP recorded data
     url = 'https://www.tsp.gov/investmentfunds/shareprice/sharePriceHistory.shtml'
     fp = urllib2.urlopen(url)
     html_string = fp.read()
@@ -42,31 +77,10 @@ def main():
     soup = BeautifulSoup(html_string)
     #print soup
 
-    # Find the data table.
-    tsp_table = soup('table', class_='tspStandard')
-    #print tsp_table
-    #print tsp_table[0].tbody
+    (data_dict, header) = extractDataFromSoup(soup)
 
-    # Retrieve all of the data rows from this table.
-    tsp_table_rows = tsp_table[0].tbody('tr')
-    #print tsp_table_rows
-
-    header = []
-    data_dict = {}
-
-    for row in tsp_table_rows:
-        #print row
-        # Save the header strings
-        if row('th'):
-            header = [c.string.strip() for c in row('th')]
-            data_dict[header[0]] = header[1:-1]
-            #print len(header), header
-        else:
-            row_data = [c.string.strip() for c in row('td')]
-            #print len(row_data), row_data
-            data_dict[row_data[0]] = row_data[1:-1]
-
-    #print data_dict
+    print data_dict
+    print header
 
     # Gets the current date / time in eastern time zone
     #print datetime.now(eastern).strftime('%b %d, %Y')
@@ -103,6 +117,47 @@ def main():
     print data_dict
 
     #print getNavigationFormData.__doc__
+
+def extractDataFromSoup(soup, data_dict=None, header=None):
+    """
+    Gets the price data from the given soup. Returns a header / data_dict or
+    appends a given data_dict and compares a given header.
+
+    Arguments:
+    soup -- BeautifulSoup4 initialized soup
+    data_dict -- Optional data to append new data to.
+    header -- Optional header to compare the extracted header / create.
+
+    Returns:
+    (data_dict, header) -- new data set and header
+    """
+    # Find the data table.
+    tsp_table = soup('table', class_='tspStandard')
+    # Retrieve all of the data rows from this table.
+    tsp_table_rows = tsp_table[0].tbody('tr')
+
+    ret_header = []
+    ret_data = {}
+
+    for row in tsp_table_rows:
+        #print row
+        # Save the header strings
+        if row('th'):
+            ret_header = [c.string.strip() for c in row('th')]
+            #ret_data[ret_header[0]] = ret_header[1:-1]
+            #print len(ret_header), ret_header
+        else:
+            row_data = [c.string.strip() for c in row('td')]
+            #print len(row_data), row_data
+            ret_data[row_data[0]] = row_data[1:-1]
+
+    if data_dict:
+        # If the data_dict value was specified, merge the two dictionaries
+        return (dict(data_dict.items() + ret_data.items()), ret_header)
+    else:
+        # If a data_dict value wasn't specified, return the data directly
+        return (ret_data, ret_header)
+
 
 def getNavigationFormData(soup, time_dir="-"):
     """
