@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-22 23:37:05
+# @Last Modified time: 2014-02-23 14:14:17
 
 import urllib
 import urllib2
@@ -80,7 +80,43 @@ def main():
 
 
     # Parse the next 30 days:
+    form_data = getNavigationFormData(soup)
 
+    # Encode the form data into a URL query string
+    params = urllib.urlencode(form_data)
+    #print params
+    # Open a virtual file pointer to the URL with the query string and read.
+    fp = urllib2.urlopen(url, params)
+    html_string = fp.read()
+    #print html_string
+
+    soup = BeautifulSoup(html_string)
+    tsp_table = soup('table', class_='tspStandard')
+    tsp_table_rows = tsp_table[0].tbody('tr')
+
+    for row in tsp_table_rows:
+        if row('td'):
+            row_data = [c.string.strip() for c in row('td')]
+            #print len(row_data), row_data
+            data_dict[row_data[0]] = row_data[1:-1]
+
+    print data_dict
+
+    #print getNavigationFormData.__doc__
+
+def getNavigationFormData(soup, time_dir="-"):
+    """
+    Gets the form data tuple to be encoded to navigate forward or backward in time.
+
+    Arguments:
+    soup -- BeautifulSoup4 initialized soup
+    time_dir -- Optional time direction specification. Defaults to backward.
+                '+' is forward in time. '-' is backward in time.
+
+    Returns: 
+    Tuple of form data to be used in urlencode(). 
+    Empty tuple if direction disabled.
+    """
     # The form data that's required is only corresponding to the sharePriceHistoryButtonGroup2.
     # The hidden "prev" and "next" fields store state data pertaining to what the next and 
     # previous screen's index from the latest listing is. This corresponds to row 0 on the 
@@ -91,7 +127,7 @@ def main():
     # current data backward. In order to simulate clicking of these buttons, the previous and
     # next values neex to be submitted, along with the button's string corresponding string
     # value, and most importantly, simulated mouse relative cursor position in pixels.
-    form_data = {
+    example = {
     #   'prev':'0',                 # This starts effectively at a -30, increasing with each
                                     # successive "Previous" click. Capped at 0 to stay positive. 
         'next':'30',                # Will increase with each successive "Previous" click.
@@ -105,73 +141,77 @@ def main():
     #   'next.y':'5'                # Emulates a mouse click Y position on the next button.
     }
 
-    # Encode the form data into a URL query string
-    params = urllib.urlencode(form_data)
-    #print params
-    # Open a virtual file pointer to the URL with the query string and read.
-    #fp = urllib2.urlopen(url, params)
-    #html_string = fp.read()
-    #print html_string
+    if time_dir == '-':
+        # This will use the "next" hidden field, the "prev" image field
 
-    soup = BeautifulSoup(html_string)
-    tsp_table = soup('table', class_='tspStandard')
-    tsp_table_rows = tsp_table[0].tbody('tr')
+        # Obtain the next hidden input and catch if there's been a change with new hidden values.
+        temp = soup('input', attrs={'name':'next','type':'hidden'})
+        if len(temp) == 1:
+            next_hidden = temp[0]['value']
+        else:
+            print 'ERROR: Wrong number of hidden inputs: {0}'.format(temp)
+            raise
 
-    for row in tsp_table_rows:
-        if row('td'):
-            row_data = [c.string.strip() for c in row('td')]
-            #print len(row_data), row_data
-            data_dict[row_data[0]] = row_data[1:-1]
+        # Obtain the prev image input and catch if it's been disabled or there's been a change in the TSP site.
+        temp = soup('input', attrs={'name':'prev','type':'image'})
+        if len(temp) == 1:
+            prev_string = temp[0]['value']
+        elif len(temp) > 1:
+            print 'ERROR: Wrong number of image inputs: {0}'.format(temp)
+            raise
+        else:
+            prev_string = 'disabled'
 
-    #print data_dict
+        # Double-check the string to make sure it's not disabled
+        if prev_string != 'disabled':
+            # Create the right form data:
+            form_data = {
+                'next': next_hidden,
+                'prev': prev_string,
+                'prev.x':'5',
+                'prev.y':'5'
+            }
+        else:
+            form_data = {}
 
-    print getNavigationFormData.__doc__
+    elif time_dir == '+':
+        # This will use the "prev" hidden field, the "next" image field
 
-def getNavigationFormData(soup, time_dir="-"):
-    """
-    Gets the form data tuple to be encoded to navigate forward or backward in time.
+        # Obtain the prev hidden input and catch if there's been a change with new hidden values.
+        temp = soup('input', attrs={'name':'prev','type':'hidden'})
+        if len(temp) == 1:
+            prev_hidden = temp[0]['value']
+        else:
+            print 'ERROR: Wrong number of hidden inputs: {0}'.format(temp)
+            raise
 
-    Arguments:
-    soup -- BeautifulSoup4 initialized soup
-    time_dir -- Optional time direction specification. Defaults to backward.
-                '+' is forward in time. '-' is backward in time.
-    """
-    # Obtain the prev hidden input and catch if there's been a change with new hidden values.
-    temp = soup('input', attrs={'name':'prev','type':'hidden'})
-    if len(temp) == 1:
-        prev_hidden = temp[0]['value']
+        # Obtain the prev image input and catch if it's been disabled or there's been a change in the TSP site.
+        temp = soup('input', attrs={'name':'next','type':'image'})
+        if len(temp) == 1:
+            next_string = temp[0]['value']
+        elif len(temp) > 1:
+            print 'ERROR: Wrong number of image inputs: {0}'.format(temp)
+            raise
+        else:
+            next_string = 'disabled'
+
+        # Double-check the string to make sure it's not disabled
+        if next_string != 'disabled':
+            # Create the right form data:
+            form_data = {
+                'prev': prev_hidden,
+                'next': next_string,
+                'next.x':'5',
+                'next.y':'5'
+            }
+        else:
+            form_data = {}
+
     else:
-        print 'ERROR: Wrong number of hidden inputs: {0}'.format(temp)
+        print 'ERROR: time_dir invalid'
+        raise
 
-    # Obtain the next hidden input and catch if there's been a change with new hidden values.
-    temp = soup('input', attrs={'name':'next','type':'hidden'})
-    if len(temp) == 1:
-        next_hidden = temp[0]['value']
-    else:
-        print 'ERROR: Wrong number of hidden inputs: {0}'.format(temp)
-
-    print prev_hidden, next_hidden
-
-
-    # Obtain the prev image input and catch if it's been disabled or there's been a change in the TSP site.
-    temp = soup('input', attrs={'name':'prev','type':'image'})
-    if len(temp) == 1:
-        prev_string = temp[0]['value']
-    elif len(temp) > 1:
-        print 'ERROR: Wrong number of image inputs: {0}'.format(temp)
-    else:
-        prev_string = 'disabled'
-
-    # Obtain the prev image input and catch if it's been disabled or there's been a change in the TSP site.
-    temp = soup('input', attrs={'name':'next','type':'image'})
-    if len(temp) == 1:
-        next_string = temp[0]['value']
-    elif len(temp) > 1:
-        print 'ERROR: Wrong number of image inputs: {0}'.format(temp)
-    else:
-        next_string = 'disabled'
-
-    print prev_string, next_string
+    return form_data
 
 # Standard main call
 if __name__ == "__main__":
