@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-23 15:50:01
+# @Last Modified time: 2014-02-23 16:53:34
 
 import urllib
 import urllib2
@@ -16,6 +16,9 @@ from bs4 import BeautifulSoup
 from datetime import datetime, tzinfo
 from pytz import timezone
 import pytz
+import csv
+import json
+import os
 
 
 def main():
@@ -29,6 +32,39 @@ def main():
     # NOTE: Share prices are updated each business day at approximately 7:00 p.m., Eastern time.
     # (https://www.tsp.gov/PDF/formspubs/oc03-11.pdf)
 
+    # Load the data from files that are present, this will be quicker.
+    if os.path.isfile("data.json"):
+        print 'data.json file found, opening and loading data.'
+        with open('data.json') as f:
+            data_dict = json.load(f)
+        print 'File load complete.'
+    else:
+        print 'No data file found.'
+        data_dict = retrieveDataFromTSP()
+
+    print data_dict
+
+    writeCSVFile('data.csv', data_dict)
+    writeJSONFile('data.json', data_dict)
+
+
+def writeCSVFile(filename, data_dict):
+    print 'Saving data to CSV file...'
+    f = open(filename, "w")
+    w = csv.writer(f)
+    for key, val in data_dict.items():
+        w.writerow([key] + val)
+    f.close()
+    print 'Complete.'
+
+def writeJSONFile(filename, data_dict):
+    print 'Saving data to JSON file...'
+    f = open(filename, "w")
+    f.write(json.dumps(data_dict))
+    f.close()
+    print 'Complete.'
+
+def retrieveDataFromTSP():
     # Start of TSP recorded data
     url = 'https://www.tsp.gov/investmentfunds/shareprice/sharePriceHistory.shtml'
     form_data = {'next':'30','prev':'0'}    # Default form data, innocuous, but non-{}
@@ -46,8 +82,8 @@ def main():
         # http://stackoverflow.com/questions/13965612/beautifulsoup-htmlparseerror-whats-wrong-with-this
         soup = BeautifulSoup(html_string)
         # Extract all of the data from the soup
-        (data_dict, header) = extractDataFromSoup(soup)
-        print data_dict
+        (data_dict, header) = extractDataFromSoup(soup, data_dict=data_dict)
+        #print data_dict
         date_strings = data_dict.keys()
         #print date_strings
         dates = [datetime.strptime(k, "%b %d, %Y") for k in date_strings]
@@ -63,6 +99,7 @@ def main():
 
     print 'Completed extraction. Form data = {0}'.format(form_data)
 
+    return data_dict
 
 def test():
     # Start of TSP recorded data
