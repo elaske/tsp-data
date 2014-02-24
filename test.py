@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-23 23:13:28
+# @Last Modified time: 2014-02-23 23:48:53
 
 import urllib
 import urllib2
@@ -61,7 +61,9 @@ def writeCSVFile(filename, data_dict):
 def writeJSONFile(filename, data_dict):
     print 'Saving data to JSON file...'
     f = open(filename, "w")
-    f.write(json.dumps(data_dict))
+    # Pretty print the JSON to make it more human-readable. (specifying indent)
+    # Specify separators to remove extra whitespace. (item separator)
+    f.write(json.dumps(data_dict, indent=2, separators=(',', ': ')))
     f.close()
     print 'Complete.'
 
