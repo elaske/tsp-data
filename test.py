@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-23 23:48:53
+# @Last Modified time: 2014-02-24 00:17:23
 
 import urllib
 import urllib2
@@ -51,9 +51,11 @@ def main():
 
 def writeCSVFile(filename, data_dict):
     print 'Saving data to CSV file...'
-    f = open(filename, "w")
+    # Open as binary to make sure that newlines are appropriately used.
+    f = open(filename, "wb")
     w = csv.writer(f)
     for key, val in data_dict.items():
+        # Defaults to \r\n for the line terminators.
         w.writerow([key] + val)
     f.close()
     print 'Complete.'
