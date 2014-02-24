@@ -3,7 +3,7 @@
 # @Author: Evan
 # @Date:   2014-02-21 23:35:06
 # @Last Modified by:   Evan
-# @Last Modified time: 2014-02-23 16:53:34
+# @Last Modified time: 2014-02-23 23:13:28
 
 import urllib
 import urllib2
@@ -37,12 +37,13 @@ def main():
         print 'data.json file found, opening and loading data.'
         with open('data.json') as f:
             data_dict = json.load(f)
+        retrieveDataFromTSP(data_dict)
         print 'File load complete.'
     else:
         print 'No data file found.'
         data_dict = retrieveDataFromTSP()
 
-    print data_dict
+    #print data_dict
 
     writeCSVFile('data.csv', data_dict)
     writeJSONFile('data.json', data_dict)
@@ -64,10 +65,22 @@ def writeJSONFile(filename, data_dict):
     f.close()
     print 'Complete.'
 
-def retrieveDataFromTSP():
+def retrieveDataFromTSP(existing_data=None):
     # Start of TSP recorded data
     url = 'https://www.tsp.gov/investmentfunds/shareprice/sharePriceHistory.shtml'
     form_data = {'next':'30','prev':'0'}    # Default form data, innocuous, but non-{}
+
+    # If there's existing data to deal with, figure out where we need to stop.
+    if existing_data:
+        # Convert this list of date strings into datetime objects and sort them
+        dates = sorted([datetime.strptime(k, "%b %d, %Y") for k in existing_data.keys()])
+        # The latest date in the existing data
+        latest_date = dates[-1]
+
+    data_dict = {}
+
+    # TODO: Should only start the URL checking if current date is after the existing 
+    # latest date. Might be nice to include some checking of weekdays / weekends.
 
     rows = 0
     while form_data:
@@ -81,8 +94,43 @@ def retrieveDataFromTSP():
         # This works with the malformed HTML if html5lib packags is installed. See:
         # http://stackoverflow.com/questions/13965612/beautifulsoup-htmlparseerror-whats-wrong-with-this
         soup = BeautifulSoup(html_string)
-        # Extract all of the data from the soup
-        (data_dict, header) = extractDataFromSoup(soup, data_dict=data_dict)
+
+        # If the existing data wasn't given,
+        if not existing_data:
+            # Extract all of the data from the soup and append to the already gathered data.
+            (data_dict, header) = extractDataFromSoup(soup, data_dict=data_dict)
+        else:
+            # Extract the data from the current soup
+            (data_dict, header) = extractDataFromSoup(soup, data_dict=data_dict)
+            # Finds keys in data_dict that are not in existing_data (1st - 2nd)
+            diff_set = set(data_dict.keys()).difference(set(existing_data.keys()))
+            diff_list = sorted([datetime.strptime(k, "%b %d, %Y") for k in diff_set])
+            #print len(diff_set), sorted([datetime.strptime(k, "%b %d, %Y") for k in diff_set])
+
+            if len(diff_set) == 0:
+                # There's no difference, so nothing to add.
+                # Break to exit the scraping loop
+                print 'Given data up to date.'
+                break
+            elif len(diff_set) == 30:
+                # The difference is the whole list, so we'll have to continue searching.
+                # Append all of the data and continue.
+                print 'Difference of 30'
+                break
+            else:
+                # This is the last difference, since there's some overlap.
+                # Append and break the loop.
+                print 'Difference of {0}'.format(len(diff_set))
+                break
+            
+            # TODO: Figure out what data needs to be appended.
+            # Get the date string keys, converted to datetime objects
+            # From the back of sorted list of those dates, move to the front.
+            # Compare the date to the latest datetime in the existing data.
+            # Any datetime object that is > existing data should be appended.
+            # If all keys are to be appended, continue. When the last key to
+            # be appended is found, return the new existing_data object.
+
         #print data_dict
         date_strings = data_dict.keys()
         #print date_strings
