@@ -14,8 +14,8 @@ from bs4 import BeautifulSoup
 #from html5lib import sanitizer
 #from html5lib import treebuilders
 from datetime import datetime, tzinfo
-from pytz import timezone
-import pytz
+#from pytz import timezone
+#import pytz
 import csv
 import json
 import os
@@ -23,19 +23,25 @@ import os
 
 def main():
     # TSP results are from the eastern time zone.
-    eastern = timezone('US/Eastern')
+    #eastern = timezone('US/Eastern')
 
     # TSP's earliest records online of share prices Jun 2, 2003.
     earliest = datetime(2003, 6, 2)
     #print earliest
 
+    # Get the current directory the file was run from
+    path = os.path.dirname(os.path.realpath(__file__))
+
+    # Get the data file full absolute path
+    data_file = os.path.join(path, "data.json")
+
     # NOTE: Share prices are updated each business day at approximately 7:00 p.m., Eastern time.
     # (https://www.tsp.gov/PDF/formspubs/oc03-11.pdf)
 
     # Load the data from files that are present, this will be quicker.
-    if os.path.isfile("data.json"):
+    if os.path.isfile(data_file):
         print 'data.json file found, opening and loading data.'
-        with open('data.json') as f:
+        with open(data_file) as f:
             data_dict = json.load(f)
         retrieveDataFromTSP(data_dict)
         print 'File load complete.'
@@ -94,10 +100,11 @@ def retrieveDataFromTSP(existing_data=None):
         # Open a virtual file pointer to the URL with the query string and read.
         fp = urllib2.urlopen(url, params)
         html_string = fp.read()
+        print html_string
         # Load the string into BeautifulSoup for parsing.
         # This works with the malformed HTML if html5lib packags is installed. See:
         # http://stackoverflow.com/questions/13965612/beautifulsoup-htmlparseerror-whats-wrong-with-this
-        soup = BeautifulSoup(html_string)
+        soup = BeautifulSoup(html_string, "html.parser")
 
         # If the existing data wasn't given,
         if not existing_data:
@@ -222,8 +229,15 @@ def extractDataFromSoup(soup, data_dict=None, header=None):
     """
     # Find the data table.
     tsp_table = soup('table', class_='tspStandard')
-    # Retrieve all of the data rows from this table.
-    tsp_table_rows = tsp_table[0].tbody('tr')
+
+    # Make sure there's a tsp table found
+    if tsp_table:
+        # Retrieve all of the data rows from this table.
+        tsp_table_rows = tsp_table[0].tbody('tr')
+    else:
+        print 'ERROR: No tsp_table found'
+        print 'Soup:\n{0}'.format(tsp_table)
+        raise
 
     ret_header = []
     ret_data = {}
