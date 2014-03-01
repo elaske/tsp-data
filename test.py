@@ -5,20 +5,21 @@
 # @Last Modified by:   Evan
 # @Last Modified time: 2014-02-24 00:17:23
 
+import csv
+import json
+import os
+import sys
 import urllib
 import urllib2
 # or if you're using BeautifulSoup4:
 from bs4 import BeautifulSoup
 # No need to import html5lib if installed apparently
-#import html5lib
+import html5lib
 #from html5lib import sanitizer
 #from html5lib import treebuilders
 from datetime import datetime, tzinfo
 #from pytz import timezone
 #import pytz
-import csv
-import json
-import os
 
 
 def main():
@@ -104,8 +105,7 @@ def retrieveDataFromTSP(existing_data=None):
         # Load the string into BeautifulSoup for parsing.
         # This works with the malformed HTML if html5lib packags is installed. See:
         # http://stackoverflow.com/questions/13965612/beautifulsoup-htmlparseerror-whats-wrong-with-this
-        soup = BeautifulSoup(html_string, "html.parser")
-        print soup
+        soup = BeautifulSoup(html_string)
 
         # If the existing data wasn't given,
         if not existing_data:
