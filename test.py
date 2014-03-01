@@ -113,7 +113,7 @@ def retrieveDataFromTSP(existing_data=None):
             (data_dict, header) = extractDataFromSoup(soup, data_dict=data_dict)
         else:
             # Extract the data from the current soup
-            (data_dict, header) = extractDataFromSoup(soup, data_dict=data_dict)
+            (data_dict, header) = extractDataFromSoup(soup)
             # Finds keys in data_dict that are not in existing_data (1st - 2nd)
             diff_set = set(data_dict.keys()).difference(set(existing_data.keys()))
             diff_list = sorted([datetime.strptime(k, "%b %d, %Y") for k in diff_set])
@@ -128,12 +128,22 @@ def retrieveDataFromTSP(existing_data=None):
                 # The difference is the whole list, so we'll have to continue searching.
                 # Append all of the data and continue.
                 print 'Difference of 30'
-                break
+                print diff_set
+                # Copy the data over from the temporary dictionary.
+                for key in diff_set:
+                    print 'Loading {0}'.format(key)
+                    existing_data[key] = data_dict[key]
+                continue
             else:
                 # This is the last difference, since there's some overlap.
                 # Append and break the loop.
                 print 'Difference of {0}'.format(len(diff_set))
-                break
+                print diff_set
+                # Copy the data over from the temporary dictionary.
+                for key in diff_set:
+                    print 'Loading {0}'.format(key)
+                    existing_data[key] = data_dict[key]
+                return existing_data
             
             # TODO: Figure out what data needs to be appended.
             # Get the date string keys, converted to datetime objects
@@ -157,7 +167,7 @@ def retrieveDataFromTSP(existing_data=None):
         #print form_data
         rows += 30
 
-    print 'Completed extraction. Form data = {0}'.format(form_data)
+    #print 'Completed extraction. Form data = {0}'.format(form_data)
 
     return data_dict
 
