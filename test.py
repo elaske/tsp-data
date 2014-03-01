@@ -20,6 +20,7 @@ import html5lib
 from datetime import datetime, tzinfo
 #from pytz import timezone
 #import pytz
+from collections import OrderedDict
 
 
 def main():
@@ -61,7 +62,7 @@ def writeCSVFile(filename, data_dict):
     # Open as binary to make sure that newlines are appropriately used.
     f = open(filename, "wb")
     w = csv.writer(f)
-    for key, val in data_dict.items():
+    for key, val in orderDictionary(data_dict).items():
         # Defaults to \r\n for the line terminators.
         w.writerow([key] + val)
     f.close()
@@ -70,11 +71,21 @@ def writeCSVFile(filename, data_dict):
 def writeJSONFile(filename, data_dict):
     print 'Saving data to JSON file...'
     f = open(filename, "w")
+
     # Pretty print the JSON to make it more human-readable. (specifying indent)
     # Specify separators to remove extra whitespace. (item separator)
-    f.write(json.dumps(data_dict, indent=2, separators=(',', ': ')))
+    f.write(json.dumps(orderDictionary(data_dict), indent=2, separators=(',', ': ')))
     f.close()
     print 'Complete.'
+
+def orderDictionary(data_dict):
+    # Put the data into an ordered dictionary - sorted by the date in datetime form.
+    return OrderedDict(
+        sorted(data_dict.items(), 
+            key = lambda i: 
+                datetime.strptime(i[0], "%b %d, %Y") # Converts string to datetime object
+            )
+        )
 
 def retrieveDataFromTSP(existing_data=None):
     # Start of TSP recorded data
@@ -133,6 +144,7 @@ def retrieveDataFromTSP(existing_data=None):
                 for key in diff_set:
                     print 'Loading {0}'.format(key)
                     existing_data[key] = data_dict[key]
+                # Continue on to the next page
                 continue
             else:
                 # This is the last difference, since there's some overlap.
@@ -145,14 +157,6 @@ def retrieveDataFromTSP(existing_data=None):
                     existing_data[key] = data_dict[key]
                 return existing_data
             
-            # TODO: Figure out what data needs to be appended.
-            # Get the date string keys, converted to datetime objects
-            # From the back of sorted list of those dates, move to the front.
-            # Compare the date to the latest datetime in the existing data.
-            # Any datetime object that is > existing data should be appended.
-            # If all keys are to be appended, continue. When the last key to
-            # be appended is found, return the new existing_data object.
-
         #print data_dict
         date_strings = data_dict.keys()
         #print date_strings
