@@ -100,11 +100,12 @@ def retrieveDataFromTSP(existing_data=None):
         # Open a virtual file pointer to the URL with the query string and read.
         fp = urllib2.urlopen(url, params)
         html_string = fp.read()
-        print html_string
+        #print html_string
         # Load the string into BeautifulSoup for parsing.
         # This works with the malformed HTML if html5lib packags is installed. See:
         # http://stackoverflow.com/questions/13965612/beautifulsoup-htmlparseerror-whats-wrong-with-this
         soup = BeautifulSoup(html_string, "html.parser")
+        print soup
 
         # If the existing data wasn't given,
         if not existing_data:
