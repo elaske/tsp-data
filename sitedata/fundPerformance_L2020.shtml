@@ -1,0 +1,807 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <title>TSP: Lifecycle Funds</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Language" content="en">
+  <meta name="Description" content="Thrift Savings Plan">
+  <meta name="Keywords" content="l fund objective, l fund investment strategy, l fund composition, l fund overview, l fund facts, l fund risks, l fund rewards, investing l funds, lifecycle funds, lifecycle fund, l fund performance, l fund history, l fund returns, l fund growth, l fund allocations, l fund investment allocations, l fund investments, target date funds">
+
+  <script type="text/javascript" src="/resources/javascript/calendar.js"></script>
+  <script type="text/javascript" src="/resources/javascript/common.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/resources/css/frtib.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/menu.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/old_style.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/subPage.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/printer_friendly.css" media="print">
+</head>
+
+<!-- <body onLoad="resizeFont('');"> -->
+<body>
+<div id="pageTop"></div>
+
+<!-- Page Body -->
+<div class="pageBody" id="pageBody">
+
+  
+  <noscript>
+    <div class="jsAlertMsg">This website requires JavaScript to be enabled!</div>
+  </noscript>
+
+  <!-- Header Area -->
+  <div class="header" id="header">
+
+    <!-- Logo -->
+    <div class="logoImageDiv" id="logoImageDiv">
+      <a><img src="/resources/images/clearpixel.gif" width="1" height="56" alt="Skip navigation"></a>
+      <a href="/index.shtml"><img src="/resources/images/Logo_FRTIB.gif" class="logoImage" id="logoImage" alt="Thrift Savings Plan Logo"></a>
+    </div>
+
+    <div class="headerLinks" id="headerLinks">
+      <!-- Top Links -->
+      <div class="headerMenu" id="headerMenu">
+        <div class="headerMenuItem" id="homeMenuItem">
+          <a class="headerMenuLink" href="/index.shtml">Home</a>
+        </div>
+        <img src="/resources/images/dottedDivider.gif" alt="">
+        <div class="headerMenuItem" id="siteHelpMenuItem">
+          <a class="headerMenuLink" href="/sitehelp/siteHelp.shtml">Site Help</a>
+        </div>
+        <img src="/resources/images/dottedDivider.gif" alt="">
+        <div class="headerMenuItem" id="whatsNewMenuItem">
+          <a class="headerMenuLink" href="/whatsnew/whatsNew.shtml">What's New</a>
+        </div>
+        <img src="/resources/images/dottedDivider.gif" alt="">
+        <div class="headerMenuItem" id="formsMenuItem">
+          <a class="headerMenuLink" href="/forms/formsPubs.shtml">Forms &amp; Publications</a>
+        </div>
+        <img src="/resources/images/dottedDivider.gif" alt="">
+        <div class="headerMenuItem" id="contactTSPMenuItem">
+          <a class="headerMenuLink" href="/participantsupport/contact/contactTSP.shtml">Contact TSP</a>
+        </div>
+      </div>
+      <!-- Login-out Message / Button -->
+             
+      <div class="logInOutDiv" id="logInOutDiv">
+          <div class="logInOutMsg" id="logInOutMsg">
+            You are not logged in:
+          </div>
+          <div class="logInOut" id="logInOut">
+            <a href="/tsp/login.shtml">
+              <img id="loginBtn" src="/resources/images/login_BTTN.gif" alt="login">
+            </a>
+          </div>
+      </div>
+      
+      
+      
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+  <!-- Horizontal Menu Top -->
+  <div class="horizontalMenuTopBox">
+    <div class="horizontalMenuTop">
+     <div class="page_InvestmentFunds">
+                    <!-- Horizontal Menu Items -->
+        <div class="horizontalMenuTopItem" id="MyAccount">
+          <div class="wrapper">
+            <a href="/tsp/accountBalance.do?subaction=view&_name=acctbal">My Account</a>
+          </div>
+        </div>
+        <div class="horizontalMenuTopItem" id="PlanParticipation">
+          <div class="wrapper"><a href="/planparticipation/planParticipation.shtml">Plan Participation</a></div>
+        </div>
+        <div class="horizontalMenuTopItem" id="InvestmentFunds">
+          <div class="wrapper"><a href="/investmentfunds/investmentFunds.shtml">Investment Funds</a></div>
+        </div>
+        <div class="horizontalMenuTopItem" id="PlanningTools">
+          <div class="wrapper"><a href="/planningtools/planningTools.shtml">Planning &amp; Tools</a></div>
+        </div>
+        <div class="horizontalMenuTopItem" id="LifeEvents">
+          <div class="wrapper"><a href="/lifeevents/lifeEvents.shtml">Life Events</a></div>
+        </div>
+        <div class="horizontalMenuTopItemLast" id="ParticipantSupport">
+          <div class="wrapper"><a href="/participantsupport/participantSupport.shtml">Participant Support</a></div>
+        </div>
+        
+        
+        <!-- Search Box -->
+        <div class="mainMenuSearch">
+          <form id="searchForm" name="searchForm" action="../../search/search.shtml">
+          <div class="searchBox">
+            <input type="hidden" name="cx" value="002256716532325889836:05c8lw6gbca">
+            <input type="hidden" name="cof" value="FORID:10">
+            <input type="hidden" name="ie" value="UTF-8">
+            <input type="text" id="searchKeyword" name="q" value="Enter search term(s)" onFocus="if (this.value=='Enter search term(s)') { this.value=''; }" onBlur="if (this.value=='') { this.value='Enter search term(s)'; }" title="Enter search terms">
+          </div>
+          <div class="searchBtn">
+            <input type="image" class="searchBtnImg" id="searchBtnImg" name="sa" src="/resources/images/search_btn.gif" alt="search" onMouseOver="this.src='/resources/images/search_btn2.gif'" onMouseOut="this.src='/resources/images/search_btn.gif'">
+          </div>
+          </form>
+         </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- Horizontal Menu Bottom -->
+  <div class="horizontalMenuBottomBox">
+    <div class="horizontalMenuBottom">
+       <div class="page_InvestmentFunds_FundOptions">
+                 <!-- Horizontal Menu Investment Funds Sub Items -->
+        <div class="horizontalMenuSubItem" id="FundsOverview">
+          <a href="/investmentfunds/fundsoverview/fundManagement.shtml">Funds Overview</a>
+        </div>
+        <div class="horizontalMenuSubItem" id="FundOptions">
+          <a href="/investmentfunds/lfundsheet/fundPerformance_L.shtml">Fund Options</a>
+        </div>
+        <div class="horizontalMenuSubItem" id="FundPerformance">
+          <a href="/investmentfunds/shareprice/sharePriceHistory.shtml">Fund Performance</a>
+        </div>
+
+        <div class="horizontalMenuSubItem" id="FundsRetired">
+          <a href="/investmentfunds/retiredfundsL2010/sharePriceHistoryL2010.shtml">Retired Funds</a>
+        </div>
+
+       </div>
+     </div>
+  </div>
+  <div class="clear"></div>
+
+  <!-- Left-Hand Nav & Content Area -->
+  <div class="mainAreaBox">
+    <div class="mainArea">
+
+      <div class="leftsideLinks" id="leftsideLinks">
+        <!-- Use Page Name To Highlight Correct Menu Item -->
+        <div class="page_LifeCycleFunds">
+          <div class="verticalMenu">
+
+  <!-- Fund Options -->
+  <div class="verticalMenuBlock">
+    <div class="verticalMenuBlockTitle">Fund Options</div>
+    <div class="verticalMenuBlockTitleLine"></div>
+    <div class="verticalMenuBlockBody">
+      <div class="verticalMenuItem" id="menuLifeCycleFunds">
+        <a class="verticalmenuitemLink" href="/investmentfunds/lfundsheet/fundPerformance_L.shtml">Lifecycle Funds</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+      <div class="verticalMenuItem" id="menuGFund">
+        <a class="verticalmenuitemLink" href="/investmentfunds/fundsheets/fundPerformance_G.shtml">G Fund: Government Securities Investment Fund</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+      <div class="verticalMenuItem" id="menuFFund">
+        <a class="verticalmenuitemLink" href="/investmentfunds/fundsheets/fundPerformance_F.shtml">F Fund: Fixed Income Index Investment Fund</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+      <div class="verticalMenuItem" id="menuCFund">
+        <a class="verticalmenuitemLink" href="/investmentfunds/fundsheets/fundPerformance_C.shtml">C Fund: Common Stock Index Investment Fund</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+      <div class="verticalMenuItem" id="menuSFund">
+        <a class="verticalmenuitemLink" href="/investmentfunds/fundsheets/fundPerformance_S.shtml">S Fund: Small Cap Stock Index Investment Fund</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+      <div class="verticalMenuItem" id="menuIFund">
+        <a class="verticalmenuitemLink" href="/investmentfunds/fundsheets/fundPerformance_I.shtml">I Fund: International Stock Index Investment Fund</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+    </div>
+  </div>
+
+</div>
+
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="contentArea" id="contentArea">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+          <a class="clickpathLink" href="/index.shtml">Home</a> <span class="clickpathBrace">&gt;</span> <a class="clickpathLink" href="/investmentfunds/investmentFunds.shtml">Investment Funds</a>
+        </div>
+
+        <div id="pageHeader">
+        <!-- Page Title -->
+        <h1>Lifecycle Funds</h1>
+        <!-- Buttons -->
+          <ul class="pageButtons">
+            <li class="printPageLink"><a href="javascript:window.print();">Print this page</a></li>
+            <li class="txtSizeCtr">
+              <span>Text size:</span>
+              <a href="javascript:resizeFont('Plus')"><img src="/resources/images/txtSizeIncr.gif" alt="Increase font size"></a>
+              <a href="javascript:resizeFont('Minus')"><img src="/resources/images/txtSizeDecr.gif" alt="Decrease font size"></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Page Content -->
+        <div class="content" id="content">
+          <!-- CONTENT START -->
+                    <!-- Shared HTML for the tab headings on the fundPerformance_L####.shtml pages -->
+          <div class="tabs">
+            <div class="unselectedTabSmall" id="tab1">
+              <a href="/investmentfunds/lfundsheet/fundPerformance_L.shtml" class="tabLink">Key Features</a>
+            </div>
+            <div class="tabSpacerMid"></div>
+            <div class="unselectedTabSmall" id="tab2">
+              <a href="/investmentfunds/lfundsheet/fundPerformance_LIncome.shtml" class="tabLink">L Income</a>
+            </div>
+            <div class="tabSpacerMid"></div>
+            <div class="selectedTabSmall" id="tab4">
+              <a href="/investmentfunds/lfundsheet/fundPerformance_L2020.shtml" class="tabLink">L 2020</a>
+            </div>
+            <div class="tabSpacerMid"></div>
+            <div class="unselectedTabSmall" id="tab5">
+              <a href="/investmentfunds/lfundsheet/fundPerformance_L2030.shtml" class="tabLink">L 2030</a>
+            </div>
+            <div class="tabSpacerMid"></div>
+            <div class="unselectedTabSmall" id="tab6">
+              <a href="/investmentfunds/lfundsheet/fundPerformance_L2040.shtml" class="tabLink">L 2040</a>
+            </div>
+            <div class="tabSpacerMid"></div>
+            <div class="unselectedTabSmall" id="tab7">
+              <a href="/investmentfunds/lfundsheet/fundPerformance_L2050.shtml" class="tabLink">L 2050</a>
+            </div>
+            <div class="tabSpacerSmallRight6"></div> <!-- Number in class name represents tab count  -->
+          </div>
+
+          <div class="tabContentAreaNoMargin">
+            <div class="clear"></div>
+            <div class="tabContentMargin">
+
+              <div class="tabContentTitle">L 2020</div>
+              <br>
+              <div class="LFundsText"> <strong>Who Should Invest</strong>
+                <p>For participants who will withdraw their money beginning 2015 through 2024.</p>
+                <strong>Objective</strong>
+                <p>To achieve a moderate level of growth with a moderate emphasis on preservation of assets.</p>
+                <strong>Asset Allocations:</strong>
+                <p>The Fund's allocation in the G, F, C, S, and I Funds is adjusted quarterly. To see how this works, use the slide bar below the pie chart. L 2020 will roll into the L Income Fund automatically in July 2020 when its allocation becomes the same as the allocation of the <nobr>L Income</nobr> Fund.</p>
+              </div>
+
+<link rel="stylesheet" href="/resources/javascript/jquery-ui-1.8.18.custom/css/smoothness/jquery-ui-1.8.18.custom.css">
+<link rel="stylesheet" href="/resources/css/Lifecycle.css">
+<script type="text/javascript" src="/resources/javascript/jquery.min_142.js"></script>
+<script type="text/javascript" src="/resources/javascript/jquery.tools.min_125.js"></script>
+<script type="text/javascript" src="/resources/javascript/jquery.numeric.js"></script>
+<script src="/resources/javascript/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="/resources/javascript/highcharts.3.0.7/highcharts-all.js"></script>
+
+          <div id="bigcontainer">
+            <div id="container"></div>
+                <div class="clear"></div>
+            <span id="controls">
+          <input type=button id="runback" value="&#9664;&#9664;" class="stopped LifecycleControls">
+          <input type=button id="stepback" value="&#9664;" class="stopped LifecycleControls">
+          <select id="optionQuarter" class="LifecycleControls">
+            <option value="01">January</option>
+            <option value="02">April</option>
+            <option value="03">July</option>
+            <option value="04">October</option>
+          </select>
+          <select id="optionYear" class="LifecycleControls">
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+          </select>
+          <input type=button id="stepforward" value="&#9654;" class="stopped LifecycleControls">
+          <input type=button id="runforward" value="&#9654;&#9654;" class="stopped LifecycleControls">
+        </span>
+            <div id="slider"></div>
+          </div>
+
+<script type="text/javascript">
+
+
+var allocation = new Object(); // L2040
+
+allocation['2005-03'] = [['<strong>July 2005</strong>', 0], ['G Fund', 27.00], ['F Fund', 8.00], ['C Fund', 34.00], ['S Fund', 12.00], ['I Fund', 19.00]];
+allocation['2005-04'] = [['<strong>October 2005</strong>', 0], ['G Fund', 27.40], ['F Fund', 7.98], ['C Fund', 33.82], ['S Fund', 11.90], ['I Fund', 18.90]];
+allocation['2006-01'] = [['<strong>January 2006</strong>', 0], ['G Fund', 27.80], ['F Fund', 7.95], ['C Fund', 33.65], ['S Fund', 11.80], ['I Fund', 18.80]];
+allocation['2006-02'] = [['<strong>April 2006</strong>', 0], ['G Fund', 28.20], ['F Fund', 7.93], ['C Fund', 33.47], ['S Fund', 11.70], ['I Fund', 18.70]];
+allocation['2006-03'] = [['<strong>July 2006</strong>', 0], ['G Fund', 28.60], ['F Fund', 7.90], ['C Fund', 33.30], ['S Fund', 11.60], ['I Fund', 18.60]];
+allocation['2006-04'] = [['<strong>October 2006</strong>', 0], ['G Fund', 29.00], ['F Fund', 7.88], ['C Fund', 33.12], ['S Fund', 11.50], ['I Fund', 18.50]];
+allocation['2007-01'] = [['<strong>January 2007</strong>', 0], ['G Fund', 29.40], ['F Fund', 7.85], ['C Fund', 32.95], ['S Fund', 11.40], ['I Fund', 18.40]];
+allocation['2007-02'] = [['<strong>April 2007</strong>', 0], ['G Fund', 29.80], ['F Fund', 7.83], ['C Fund', 32.77], ['S Fund', 11.30], ['I Fund', 18.30]];
+allocation['2007-03'] = [['<strong>July 2007</strong>', 0], ['G Fund', 30.20], ['F Fund', 7.80], ['C Fund', 32.60], ['S Fund', 11.20], ['I Fund', 18.20]];
+allocation['2007-04'] = [['<strong>October 2007</strong>', 0], ['G Fund', 30.60], ['F Fund', 7.78], ['C Fund', 32.42], ['S Fund', 11.10], ['I Fund', 18.10]];
+allocation['2008-01'] = [['<strong>January 2008</strong>', 0], ['G Fund', 31.00], ['F Fund', 7.75], ['C Fund', 32.25], ['S Fund', 11.00], ['I Fund', 18.00]];
+allocation['2008-02'] = [['<strong>April 2008</strong>', 0], ['G Fund', 31.40], ['F Fund', 7.73], ['C Fund', 32.07], ['S Fund', 10.90], ['I Fund', 17.90]];
+allocation['2008-03'] = [['<strong>July 2008</strong>', 0], ['G Fund', 31.80], ['F Fund', 7.70], ['C Fund', 31.90], ['S Fund', 10.80], ['I Fund', 17.80]];
+allocation['2008-04'] = [['<strong>October 2008</strong>', 0], ['G Fund', 32.20], ['F Fund', 7.68], ['C Fund', 31.72], ['S Fund', 10.70], ['I Fund', 17.70]];
+allocation['2009-01'] = [['<strong>January 2009</strong>', 0], ['G Fund', 32.60], ['F Fund', 7.65], ['C Fund', 31.55], ['S Fund', 10.60], ['I Fund', 17.60]];
+allocation['2009-02'] = [['<strong>April 2009</strong>', 0], ['G Fund', 33.00], ['F Fund', 7.63], ['C Fund', 31.37], ['S Fund', 10.50], ['I Fund', 17.50]];
+allocation['2009-03'] = [['<strong>July 2009</strong>', 0], ['G Fund', 33.40], ['F Fund', 7.60], ['C Fund', 31.20], ['S Fund', 10.40], ['I Fund', 17.40]];
+allocation['2009-04'] = [['<strong>October 2009</strong>', 0], ['G Fund', 33.80], ['F Fund', 7.58], ['C Fund', 31.02], ['S Fund', 10.30], ['I Fund', 17.30]];
+allocation['2010-01'] = [['<strong>January 2010</strong>', 0], ['G Fund', 34.20], ['F Fund', 7.55], ['C Fund', 30.85], ['S Fund', 10.20], ['I Fund', 17.20]];
+allocation['2010-02'] = [['<strong>April 2010</strong>', 0], ['G Fund', 34.60], ['F Fund', 7.53], ['C Fund', 30.67], ['S Fund', 10.10], ['I Fund', 17.10]];
+allocation['2010-03'] = [['<strong>July 2010</strong>', 0], ['G Fund', 35.00], ['F Fund', 7.50], ['C Fund', 30.50], ['S Fund', 10.00], ['I Fund', 17.00]];
+allocation['2010-04'] = [['<strong>October 2010</strong>', 0], ['G Fund', 35.40], ['F Fund', 7.48], ['C Fund', 30.32], ['S Fund', 9.90], ['I Fund', 16.90]];
+allocation['2011-01'] = [['<strong>January 2011</strong>', 0], ['G Fund', 35.80], ['F Fund', 7.45], ['C Fund', 30.15], ['S Fund', 9.80], ['I Fund', 16.80]];
+allocation['2011-02'] = [['<strong>April 2011</strong>', 0], ['G Fund', 36.20], ['F Fund', 7.43], ['C Fund', 29.97], ['S Fund', 9.70], ['I Fund', 16.70]];
+allocation['2011-03'] = [['<strong>July 2011</strong>', 0], ['G Fund', 36.60], ['F Fund', 7.40], ['C Fund', 29.80], ['S Fund', 9.60], ['I Fund', 16.60]];
+allocation['2011-04'] = [['<strong>October 2011</strong>', 0], ['G Fund', 37.00], ['F Fund', 7.38], ['C Fund', 29.62], ['S Fund', 9.50], ['I Fund', 16.50]];
+allocation['2012-01'] = [['<strong>January 2012</strong>', 0], ['G Fund', 37.40], ['F Fund', 7.35], ['C Fund', 29.45], ['S Fund', 9.40], ['I Fund', 16.40]];
+allocation['2012-02'] = [['<strong>April 2012</strong>', 0], ['G Fund', 37.80], ['F Fund', 7.33], ['C Fund', 29.27], ['S Fund', 9.30], ['I Fund', 16.30]];
+allocation['2012-03'] = [['<strong>July 2012</strong>', 0], ['G Fund', 38.20], ['F Fund', 7.30], ['C Fund', 29.10], ['S Fund', 9.20], ['I Fund', 16.20]];
+allocation['2012-04'] = [['<strong>October 2012</strong>', 0], ['G Fund', 38.60], ['F Fund', 7.28], ['C Fund', 28.92], ['S Fund', 9.10], ['I Fund', 16.10]];
+allocation['2013-01'] = [['<strong>January 2013</strong>', 0], ['G Fund', 39.00], ['F Fund', 7.25], ['C Fund', 28.75], ['S Fund', 9.00], ['I Fund', 16.00]];
+allocation['2013-02'] = [['<strong>April 2013</strong>', 0], ['G Fund', 39.40], ['F Fund', 7.23], ['C Fund', 28.57], ['S Fund', 8.90], ['I Fund', 15.90]];
+allocation['2013-03'] = [['<strong>July 2013</strong>', 0], ['G Fund', 39.80], ['F Fund', 7.20], ['C Fund', 28.40], ['S Fund', 8.80], ['I Fund', 15.80]];
+allocation['2013-04'] = [['<strong>October 2013</strong>', 0], ['G Fund', 40.20], ['F Fund', 7.18], ['C Fund', 28.22], ['S Fund', 8.70], ['I Fund', 15.70]];
+allocation['2014-01'] = [['<strong>January 2014</strong>', 0], ['G Fund', 42.98], ['F Fund', 4.77], ['C Fund', 28.05], ['S Fund', 8.60], ['I Fund', 15.60]];
+allocation['2014-02'] = [['<strong>April 2014</strong>', 0], ['G Fund', 43.20], ['F Fund', 4.93], ['C Fund', 27.87], ['S Fund', 8.50], ['I Fund', 15.50]];
+allocation['2014-03'] = [['<strong>July 2014</strong>', 0], ['G Fund', 43.43], ['F Fund', 5.07], ['C Fund', 27.70], ['S Fund', 8.40], ['I Fund', 15.40]];
+allocation['2014-04'] = [['<strong>October 2014</strong>', 0], ['G Fund', 43.66], ['F Fund', 5.22], ['C Fund', 27.52], ['S Fund', 8.30], ['I Fund', 15.30]];
+allocation['2015-01'] = [['<strong>January 2015</strong>', 0], ['G Fund', 43.90], ['F Fund', 5.35], ['C Fund', 27.35], ['S Fund', 8.20], ['I Fund', 15.20]];
+allocation['2015-02'] = [['<strong>April 2015</strong>', 0], ['G Fund', 44.15], ['F Fund', 5.48], ['C Fund', 27.17], ['S Fund', 8.10], ['I Fund', 15.10]];
+allocation['2015-03'] = [['<strong>July 2015</strong>', 0], ['G Fund', 44.40], ['F Fund', 5.60], ['C Fund', 27.00], ['S Fund', 8.00], ['I Fund', 15.00]];
+allocation['2015-04'] = [['<strong>October 2015</strong>', 0], ['G Fund', 45.72], ['F Fund', 5.78], ['C Fund', 26.25], ['S Fund', 7.75], ['I Fund', 14.50]];
+allocation['2016-01'] = [['<strong>January 2016</strong>', 0], ['G Fund', 47.06], ['F Fund', 5.94], ['C Fund', 25.50], ['S Fund', 7.50], ['I Fund', 14.00]];
+allocation['2016-02'] = [['<strong>April 2016</strong>', 0], ['G Fund', 48.42], ['F Fund', 6.08], ['C Fund', 24.75], ['S Fund', 7.25], ['I Fund', 13.50]];
+allocation['2016-03'] = [['<strong>July 2016</strong>', 0], ['G Fund', 49.80], ['F Fund', 6.20], ['C Fund', 24.00], ['S Fund', 7.00], ['I Fund', 13.00]];
+allocation['2016-04'] = [['<strong>October 2016</strong>', 0], ['G Fund', 51.20], ['F Fund', 6.30], ['C Fund', 23.25], ['S Fund', 6.75], ['I Fund', 12.50]];
+allocation['2017-01'] = [['<strong>January 2017</strong>', 0], ['G Fund', 52.62], ['F Fund', 6.38], ['C Fund', 22.50], ['S Fund', 6.50], ['I Fund', 12.00]];
+allocation['2017-02'] = [['<strong>April 2017</strong>', 0], ['G Fund', 54.06], ['F Fund', 6.44], ['C Fund', 21.75], ['S Fund', 6.25], ['I Fund', 11.50]];
+allocation['2017-03'] = [['<strong>July 2017</strong>', 0], ['G Fund', 55.52], ['F Fund', 6.48], ['C Fund', 21.00], ['S Fund', 6.00], ['I Fund', 11.00]];
+allocation['2017-04'] = [['<strong>October 2017</strong>', 0], ['G Fund', 57.00], ['F Fund', 6.50], ['C Fund', 20.25], ['S Fund', 5.75], ['I Fund', 10.50]];
+allocation['2018-01'] = [['<strong>January 2018</strong>', 0], ['G Fund', 58.50], ['F Fund', 6.50], ['C Fund', 19.50], ['S Fund', 5.50], ['I Fund', 10.00]];
+allocation['2018-02'] = [['<strong>April 2018</strong>', 0], ['G Fund', 60.05], ['F Fund', 6.45], ['C Fund', 18.75], ['S Fund', 5.25], ['I Fund', 9.50]];
+allocation['2018-03'] = [['<strong>July 2018</strong>', 0], ['G Fund', 61.60], ['F Fund', 6.40], ['C Fund', 18.00], ['S Fund', 5.00], ['I Fund', 9.00]];
+allocation['2018-04'] = [['<strong>October 2018</strong>', 0], ['G Fund', 63.15], ['F Fund', 6.35], ['C Fund', 17.25], ['S Fund', 4.75], ['I Fund', 8.50]];
+allocation['2019-01'] = [['<strong>January 2019</strong>', 0], ['G Fund', 64.70], ['F Fund', 6.30], ['C Fund', 16.50], ['S Fund', 4.50], ['I Fund', 8.00]];
+allocation['2019-02'] = [['<strong>April 2019</strong>', 0], ['G Fund', 66.25], ['F Fund', 6.25], ['C Fund', 15.75], ['S Fund', 4.25], ['I Fund', 7.50]];
+allocation['2019-03'] = [['<strong>July 2019</strong>', 0], ['G Fund', 67.80], ['F Fund', 6.20], ['C Fund', 15.00], ['S Fund', 4.00], ['I Fund', 7.00]];
+allocation['2019-04'] = [['<strong>October 2019</strong>', 0], ['G Fund', 69.35], ['F Fund', 6.15], ['C Fund', 14.25], ['S Fund', 3.75], ['I Fund', 6.50]];
+allocation['2020-01'] = [['<strong>January 2020</strong>', 0], ['G Fund', 70.90], ['F Fund', 6.10], ['C Fund', 13.50], ['S Fund', 3.50], ['I Fund', 6.00]];
+allocation['2020-02'] = [['<strong>April 2020</strong>', 0], ['G Fund', 72.45], ['F Fund', 6.05], ['C Fund', 12.75], ['S Fund', 3.25], ['I Fund', 5.50]];
+allocation['2020-03'] = [['<strong>July 2020</strong>', 0], ['G Fund', 74.00], ['F Fund', 6.00], ['C Fund', 12.00], ['S Fund', 3.00], ['I Fund', 5.00]];
+Object.keys = Object.keys || function(o) {  
+    var result = [];  
+    for(var name in o) {  
+        if (o.hasOwnProperty(name))  
+          result.push(name);  
+    }  
+    return result;  
+};
+
+var numkeys = Object.keys(allocation).length;
+
+var chart = null;
+
+function chartDataChange(idx) {
+  if (idx == null) return;
+  if (chart == null) return;
+  if (chart.series[0] == null) return;
+  chart.series[0].setData(allocation[idx], true);
+}
+
+$('#optionPeriod').change(function() {
+  chartDataChange(this.value);
+});
+
+var colorHead = '#FFFFFF';
+var colorG = '#DD5900';
+var colorF = '#8E2344';
+var colorC = '#009E60';
+var colorS = '#00A3DD';
+var colorI = '#5B027A';
+var colorBorder = '#FFFFFF';
+Highcharts.setOptions({ colors: [colorHead, colorG, colorF, colorC, colorS, colorI] });
+
+var myInterval = null;
+var direction = 0;
+var mouseDown = null;
+
+function displayRunning() {
+  if (direction < 0) {
+    $("#runback").addClass("running");
+    $("#runback").removeClass("stopped");
+    $("#runforward").addClass("stopped");
+    $("#runforward").removeClass("running");
+  }
+  if (direction > 0) {
+    $("#runforward").addClass("running");
+    $("#runforward").removeClass("stopped");
+    $("#runback").addClass("stopped");
+    $("#runback").removeClass("running");
+  }
+}
+
+function displayStopped() {
+    $("#runforward").addClass("stopped");
+    $("#runforward").removeClass("running");
+    $("#runback").addClass("stopped");
+    $("#runback").removeClass("running");
+}
+
+function setMyInterval(dir) {
+  if (direction == dir) {       // clicked while already going that way, so stop
+    displayStopped();
+    return clearMyInterval();
+  }
+
+  direction = dir;
+  displayRunning();
+
+  if (myInterval != null) return;
+  myInterval = setInterval(function() {myWorker()}, 100);
+}
+function clearMyInterval() {
+  if (myInterval == null) return;
+  clearInterval(myInterval);
+  myInterval = null;
+  displayStopped();
+  direction = 0;
+}
+
+function myWorker() {
+  if (direction < 0) stepback_action();
+  if (direction > 0) stepforward_action();
+}
+
+function dropChange() {
+    var year = $('#optionYear').val();
+    var quarter = $('#optionQuarter').val();
+    if (year < '2005') {
+      year = '2005';
+      $('#optionYear').val(year);
+      quarter = '01';
+      $('#optionQuarter').val(quarter);
+      clearMyInterval();
+      clearInterval(mouseDown);
+      mouseDown = null;
+    }
+    if (year > '2020') {
+      year = '2020';
+      $('#optionYear').val(year);
+      quarter = '04';
+      $('#optionQuarter').val(quarter);
+      clearMyInterval();
+      clearInterval(mouseDown);
+      mouseDown = null;
+    }
+    if (year == '2005') {
+      if (quarter < '03') {
+    quarter = '03';
+    $('#optionQuarter').val(quarter);
+    clearMyInterval();
+    clearInterval(mouseDown);
+    mouseDown = null;
+      }
+    }
+    if (year == '2020') {
+      if (quarter > '03') {
+    quarter = '03';
+    $('#optionQuarter').val(quarter);
+    clearMyInterval();
+    clearInterval(mouseDown);
+    mouseDown = null;
+      }
+    }
+    // console.log(year + ' ' + quarter);
+    chartDataChange(year + '-' + quarter);
+
+   // update slider
+   var idx = (parseInt(year) - 2005) * 4 + (parseInt(quarter)-1) - (03 - 1);
+   if ((idx >= 0) && (idx < numkeys)) $("#slider").slider("option", "value", idx);
+};
+
+// function to map integer to allocation[] index
+function mapIndex(idx) {
+  var year = 2005 + Math.floor(idx / 4);
+  var quarter = parseInt(03) - 1 + Math.floor(idx % 4) + 1;
+  if (quarter > 4) { year++; quarter -= 4; }
+
+  // instead of returning index, lets just set the dropdowns
+  $('#optionYear').val(year);
+  $('#optionQuarter').val('0' + quarter);
+  chartDataChange(year + '-0' + quarter);
+}
+
+// this is the work for the step back task
+function stepback_action() {
+    var year = $('#optionYear').val();
+    var quarter = $('#optionQuarter').val();
+    if (quarter == '01') {
+      $('#optionYear').val(parseInt(year)-1);
+      $('#optionQuarter').val('04');
+    } else {
+      $('#optionQuarter').val('0' + (parseInt(quarter)-1));
+    }
+    dropChange();
+    return false;
+}
+
+// this is the work for the step forward task
+function stepforward_action() {
+    // console.log('stepforward ' + mouseDown);
+    var year = $('#optionYear').val();
+    var quarter = $('#optionQuarter').val();
+    if (quarter == '04') {
+      $('#optionYear').val(parseInt(year)+1);
+      $('#optionQuarter').val('01');
+    } else {
+      $('#optionQuarter').val('0' + (parseInt(quarter)+1));
+    }
+    dropChange();
+    return false;
+}
+
+$(document).ready(function() {
+
+  // button functions
+  $('#runback').click(function (e) {
+    setMyInterval(-1);
+    return false;
+  });
+//  $('#stepback').click(function (e) {
+//    clearMyInterval();
+//    return stepback_action();
+//  });
+//  $('#stepforward').click(function (e) {
+//    clearMyInterval();
+//    return stepforward_action();
+//  });
+  $('#runforward').click(function (e) {
+    setMyInterval(1);
+    return false;
+  });
+
+  // mouse down functions
+  $('#stepforward').mousedown(function(event) {
+      clearMyInterval();
+      stepforward_action();
+      if (!mouseDown) { mouseDown = setInterval(function() {stepforward_action()}, 100 ); }
+  });
+  $('#stepforward').mouseup(function(event) {
+      clearInterval(mouseDown);
+      mouseDown = null;
+  });
+  $('#stepback').mousedown(function(event) {
+      clearMyInterval();
+      stepback_action();
+      if (!mouseDown) { mouseDown = setInterval(function() {stepback_action()}, 100 ); }
+  });
+  $('#stepback').mouseup(function(event) {
+      clearInterval(mouseDown);
+      mouseDown = null;
+  });
+
+  // drop down functions
+  $('#optionYear').change(function() {
+    dropChange();
+  });
+  $('#optionQuarter').change(function() {
+    dropChange();
+  });
+
+    $( "#slider" ).slider({
+      range: "min",
+//      value: 30,
+      min: 0,
+      max: numkeys-1,
+      slide: function( event, ui ) {
+        clearMyInterval();
+        mapIndex(ui.value);
+        // dropChange();
+      }
+    });
+
+   var options = {
+            chart: { renderTo: 'container' },
+        credits: { enabled: false },
+            title: { text: 'Percentage Fund Allocaton' },
+            tooltip: {
+        followPointer: true,
+                formatter: function() {
+                    // return this.point.name +': '+ this.y.toFixed(2) +'%';
+                    return this.point.name;
+                }
+            },
+            series: [
+          {
+                type: 'pie',
+                data: [
+                    { name: '<strong>July 2005</strong>', y: 0, color: '#FFFFFF' },
+                    { name: 'G Fund', y: 27, color: colorG },
+                    { name: 'F Fund', y: 8, color: colorF },
+                    { name: 'C Fund', y: 34, color: colorC },
+                    { name: 'S Fund', y: 12, color: colorS },
+                    { name: 'I Fund', y: 19, color: colorI }
+              ],
+        point: { events: { legendItemClick: function () {
+            this.select();
+            chart.tooltip.refresh(this);
+            return false;
+            },
+            click: function () { this.select(); }
+             } },
+                center: [100, 80],
+                size: 180,
+                startAngle: 90,
+                showInLegend: true,
+                borderColor: colorBorder,
+                dataLabels: { enabled: false }
+              }
+            ],
+        legend: { y:60, enabled: true, verticalAlign: 'top', align: 'right', layout: 'vertical', useHTML: true,
+        margin: 5, symbolWidth: 10, symbolPadding: 3, shadow: false,
+        width: 120,
+                labelFormatter: function() {
+            if (this.y <= 0) { return '<span style="text-align: left; width:90px;float:left;">' + this.name + '</span>'; }
+            var fundname = this.name.split(" ");
+                    return '<div style="margin-left: 5%; width:95px;">'
+                + '<span style="width:12px;float: left; text-align: center;">' + fundname[0] + '</span>'
+                + '<span style="width:30px;float: left; text-align: center;">' + fundname[1] + '</span>'
+                + '<span style="float: right;">' + this.y.toFixed(2) + '%</span>'
+                + '<div>';
+                }
+        },
+        navigation: { buttonOptions: { enabled: false } }
+    }
+    chart = new Highcharts.Chart(options);
+
+    $('#optionYear').val('2014');
+    $('#optionQuarter').val('02');
+    dropChange();
+});
+
+</script>
+
+              <div class="clear"></div>
+              <br>
+              <br>
+<table><tr valign=top>
+<td>
+
+              <table class="fundPerformanceTable"><tr><td>
+                <div class="perfContainer">
+                  <div class="perfContainerTop"></div>
+                  <div class="perfContainerMid">
+                    <div class="perfContainerTitle"><strong>Monthly Returns</strong> (Last 12 Months)</div>
+                    <div class="perfContainerContent">
+                      <img src="/investmentfunds/fundsheets/fundPerfGraph.shtml?fund=L2020 fund&type=Monthly" width="280" height="150" alt="Monthly Returns (Last 12 Months)">
+                    </div>
+
+                  </div>
+                  <div class="perfContainerBtm"></div>
+                </div>
+              </td></tr></table>
+
+</td> <td>
+
+              <table class="fundPerformanceTable"><tr><td>
+                <div class="perfContainer">
+                  <div class="perfContainerTop"></div>
+                  <div class="perfContainerMid">
+                    <div class="perfContainerTitle"><strong>Annual Returns</strong></div>
+                    <div class="perfContainerContent">
+                      <img src="/investmentfunds/fundsheets/fundPerfGraph.shtml?fund=L2020 fund&type=Annual" width="280" height="150" alt="Annual Returns">
+                    </div>
+
+                  </div>
+                  <div class="perfContainerBtm"></div>
+                </div>
+              </td></tr></table>
+
+</td>
+</tr><tr valign=top>
+<td>
+
+              <table class="fundPerformanceTable"><tr><td>
+                <div class="perfContainer">
+                  <div class="perfContainerTop"></div>
+                  <div class="perfContainerMid">
+                    <div class="perfContainerTitle"><strong>Average Annual Returns</strong> (As of December
+                      
+
+
+2013)
+                    </div>
+                    <div class="perfContainerContent">
+
+
+
+<table><tr class="evenRow"><th>&nbsp;</th> <th>L 2020 Fund*</th> <th><br/></th></tr><tr class="oddRow"><td class="rowHeading">1-Year</td><td>16.03%</td><td>&nbsp;</td></tr><tr class="evenRow"><td class="rowHeading">3-Year</td><td>8.76%</td><td>&nbsp;</td></tr><tr class="oddRow"><td class="rowHeading">5-Year</td><td>11.13%</td><td>&nbsp;</td></tr><tr class="evenRow"><td class="rowHeading">10-Year</td><td>N/A</td><td>&nbsp;</td></tr><tr class="oddRow"><td class="rowHeading">Since August 1, 2005</td><td>6.09%</td><td>&nbsp;</td></tr></table>
+                      *After expenses
+                    </div>
+
+                  </div>
+                  <div class="perfContainerBtm"></div>
+                </div>
+              </td></tr></table>
+
+</td> <td>
+
+              <table class="fundPerformanceTable"><tr><td>
+                <div class="perfContainer">
+                  <div class="perfContainerTop"></div>
+                  <div class="perfContainerMid">
+                    <div class="perfContainerTitle"><strong>Growth of $100 since Inception</strong></div>
+                    <div class="perfContainerContent">
+                      <img src="/investmentfunds/fundsheets/fundPerfGraph.shtml?fund=L2020 fund&type=Growth" width="280" height="150" alt="Growth of $100 since Inception">
+                    </div>
+
+                  </div>
+                  <div class="perfContainerBtm"></div>
+                </div>
+              </td></tr></table>
+
+</td>
+</tr></table>
+
+            </div> <!-- End of Tab Content -->
+          </div>
+
+          <!-- CONTENT END -->
+        </div>
+        <!-- End of Page Content -->
+      </div>
+      <div style="clear:both;"></div> <!-- Required before closing  mainArea div -->
+    </div>
+  </div>
+
+  <div class="pushBox"><div class="push"></div></div>
+</div>
+  <!-- Page Footer -->
+  <div class="footerBox" id="footerBox">
+    <div class="footer " id="footer">
+      <div class="footerLinks">
+        <div class="adobeLink">
+          <a class="footerLink popup" href="http://get.adobe.com/reader/" title="This page opens in a new window.">To view PDF documents, get Adobe Reader</a> <a class="footerLink popup" href="http://get.adobe.com/reader/" title="This page opens in a new window."><img class="btn" id="acrobatImg" src="/resources/images/acrobat.gif" width="17" height="17" alt="Acrobat Logo"></a>
+        </div>
+        <a class="footerLink" href="/planparticipation/about/purposeAndHistory.shtml#whoAdministers">About Us</a>
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="footerLink" href="/sitehelp/security/onlineSecurity.shtml">Security Center</a>
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="footerLink" href="/sitehelp/privacy/privacyPolicy.shtml">Privacy Policy</a>
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="footerLink" href="/other/sitemap/siteMap.shtml">Site Map</a>
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="footerLink" href="/representative/representative.shtml">Information for Agency/Service Representatives</a>
+      </div>
+      <div class="copyright" >
+        &copy;
+        <script type="text/javascript">
+        <!--
+          var d = new Date();
+
+          var curr_year = d.getFullYear();
+
+          document.write(curr_year + " Thrift Savings Plan");
+          //-->
+        </script>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+  resizeFont('');
+  addLinkIcons();
+</script>
+
+</body>
+</html>

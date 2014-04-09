@@ -1,0 +1,1003 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>TSP: Share Price History</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Language" content="en">
+  <meta name="Description" content="Thrift Savings Plan">
+  <meta name="Keywords" content="share price history, share price, current share prices, current share price, share prices, share price, l income price, l 2020 price, l 2030 price, l 2040 price, l 2050 price, prices, g fund price, f fund price, c fund price, s fund price, I fund price">
+
+  <script type="text/javascript" src="/resources/javascript/calendar.js"></script>
+  <script type="text/javascript" src="/resources/javascript/common.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/resources/css/frtib.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/menu.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/old_style.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/subPage.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/messages.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/downloadSharePrice.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/printer_friendly.css" media="print">
+</head>
+
+<body onLoad="resizeFont('');">
+<div id="pageTop"></div>
+
+<!-- Page Body -->
+<div class="pageBody" id="pageBody">
+
+  
+  <noscript>
+    <div class="jsAlertMsg">This website requires JavaScript to be enabled!</div>
+  </noscript>
+
+  <!-- Header Area -->
+  <div class="header" id="header">
+
+    <!-- Logo -->
+    <div class="logoImageDiv" id="logoImageDiv">
+      <a><img src="/resources/images/clearpixel.gif" width="1" height="56" alt="Skip navigation"></a>
+      <a href="/index.shtml"><img src="/resources/images/Logo_FRTIB.gif" class="logoImage" id="logoImage" alt="Thrift Savings Plan Logo"></a>
+    </div>
+
+    <div class="headerLinks" id="headerLinks">
+      <!-- Top Links -->
+      <div class="headerMenu" id="headerMenu">
+        <div class="headerMenuItem" id="homeMenuItem">
+          <a class="headerMenuLink" href="/index.shtml">Home</a>
+        </div>
+        <img src="/resources/images/dottedDivider.gif" alt="">
+        <div class="headerMenuItem" id="siteHelpMenuItem">
+          <a class="headerMenuLink" href="/sitehelp/siteHelp.shtml">Site Help</a>
+        </div>
+        <img src="/resources/images/dottedDivider.gif" alt="">
+        <div class="headerMenuItem" id="whatsNewMenuItem">
+          <a class="headerMenuLink" href="/whatsnew/whatsNew.shtml">What's New</a>
+        </div>
+        <img src="/resources/images/dottedDivider.gif" alt="">
+        <div class="headerMenuItem" id="formsMenuItem">
+          <a class="headerMenuLink" href="/forms/formsPubs.shtml">Forms &amp; Publications</a>
+        </div>
+        <img src="/resources/images/dottedDivider.gif" alt="">
+        <div class="headerMenuItem" id="contactTSPMenuItem">
+          <a class="headerMenuLink" href="/participantsupport/contact/contactTSP.shtml">Contact TSP</a>
+        </div>
+      </div>
+      <!-- Login-out Message / Button -->
+             
+      <div class="logInOutDiv" id="logInOutDiv">
+          <div class="logInOutMsg" id="logInOutMsg">
+            You are not logged in:
+          </div>
+          <div class="logInOut" id="logInOut">
+            <a href="/tsp/login.shtml">
+              <img id="loginBtn" src="/resources/images/login_BTTN.gif" alt="login">
+            </a>
+          </div>
+      </div>
+      
+      
+      
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+  <!-- Horizontal Menu Top -->
+  <div class="horizontalMenuTopBox">
+    <div class="horizontalMenuTop">
+      <div class="page_InvestmentFunds">
+                    <!-- Horizontal Menu Items -->
+        <div class="horizontalMenuTopItem" id="MyAccount">
+          <div class="wrapper">
+            <a href="/tsp/accountBalance.do?subaction=view&_name=acctbal">My Account</a>
+          </div>
+        </div>
+        <div class="horizontalMenuTopItem" id="PlanParticipation">
+          <div class="wrapper"><a href="/planparticipation/planParticipation.shtml">Plan Participation</a></div>
+        </div>
+        <div class="horizontalMenuTopItem" id="InvestmentFunds">
+          <div class="wrapper"><a href="/investmentfunds/investmentFunds.shtml">Investment Funds</a></div>
+        </div>
+        <div class="horizontalMenuTopItem" id="PlanningTools">
+          <div class="wrapper"><a href="/planningtools/planningTools.shtml">Planning &amp; Tools</a></div>
+        </div>
+        <div class="horizontalMenuTopItem" id="LifeEvents">
+          <div class="wrapper"><a href="/lifeevents/lifeEvents.shtml">Life Events</a></div>
+        </div>
+        <div class="horizontalMenuTopItemLast" id="ParticipantSupport">
+          <div class="wrapper"><a href="/participantsupport/participantSupport.shtml">Participant Support</a></div>
+        </div>
+        
+        
+        <!-- Search Box -->
+        <div class="mainMenuSearch">
+          <form id="searchForm" name="searchForm" action="../../search/search.shtml">
+          <div class="searchBox">
+            <input type="hidden" name="cx" value="002256716532325889836:05c8lw6gbca">
+            <input type="hidden" name="cof" value="FORID:10">
+            <input type="hidden" name="ie" value="UTF-8">
+            <input type="text" id="searchKeyword" name="q" value="Enter search term(s)" onFocus="if (this.value=='Enter search term(s)') { this.value=''; }" onBlur="if (this.value=='') { this.value='Enter search term(s)'; }" title="Enter search terms">
+          </div>
+          <div class="searchBtn">
+            <input type="image" class="searchBtnImg" id="searchBtnImg" name="sa" src="/resources/images/search_btn.gif" alt="search" onMouseOver="this.src='/resources/images/search_btn2.gif'" onMouseOut="this.src='/resources/images/search_btn.gif'">
+          </div>
+          </form>
+         </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- Horizontal Menu Bottom -->
+  <div class="horizontalMenuBottomBox">
+    <div class="horizontalMenuBottom">
+      <div class="page_InvestmentFunds_FundPerformance">
+              <!-- Horizontal Menu Investment Funds Sub Items -->
+        <div class="horizontalMenuSubItem" id="FundsOverview">
+          <a href="/investmentfunds/fundsoverview/fundManagement.shtml">Funds Overview</a>
+        </div>
+        <div class="horizontalMenuSubItem" id="FundOptions">
+          <a href="/investmentfunds/lfundsheet/fundPerformance_L.shtml">Fund Options</a>
+        </div>
+        <div class="horizontalMenuSubItem" id="FundPerformance">
+          <a href="/investmentfunds/shareprice/sharePriceHistory.shtml">Fund Performance</a>
+        </div>
+
+        <div class="horizontalMenuSubItem" id="FundsRetired">
+          <a href="/investmentfunds/retiredfundsL2010/sharePriceHistoryL2010.shtml">Retired Funds</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+
+  <!-- Left-Hand Nav & Content Area -->
+  <div class="mainAreaBox">
+    <div class="mainArea">
+
+      <div class="leftsideLinks" id="leftsideLinks">
+        <!-- Use Page Name To Highlight Correct Menu Item -->
+          <div class="page_SharePriceHistory">
+           <div class="verticalMenu">
+
+  <!-- Fund Performance -->
+  <div class="verticalMenuBlock">
+    <div class="verticalMenuBlockTitle">Fund Performance</div>
+    <div class="verticalMenuBlockTitleLine"></div>
+    <div class="verticalMenuBlockBody">
+      <div class="verticalMenuItem" id="menuSharePriceHistory">
+        <a class="verticalmenuitemLink" href="/investmentfunds/shareprice/sharePriceHistory.shtml">Share Price History</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+      <div class="verticalMenuItem" id="menuSummaryOfReturns">
+        <a class="verticalmenuitemLink" href="/investmentfunds/returns/returnSummary.shtml">Summary of Returns</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+      <div class="verticalMenuItem" id="menuMonthlyReturns">
+        <a class="verticalmenuitemLink" href="/investmentfunds/monthly/monthlyReturns.shtml">Monthly Returns</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+      <div class="verticalMenuItem" id="menuAnnualReturns">
+        <a class="verticalmenuitemLink" href="/investmentfunds/annual/annualReturns.shtml">Annual Returns</a>
+      </div>
+      <div class="verticalMenuLine"></div>
+    </div>
+  </div>
+
+</div>
+
+          </div>
+          </div>
+
+      <!-- Main Content Area -->
+      <div class="contentArea" id="contentArea">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+          <a class="clickpathLink" href="/index.shtml">Home</a> <span class="clickpathBrace">&gt;</span>
+      <a class="clickpathLink" href="/investmentfunds/investmentFunds.shtml">Investment Funds</a>
+        </div>
+        <div id="pageHeader">
+          <!--  The TSP will be closed --------- Day -->
+        
+          
+            <!-- Page Title -->
+         <h1>Share Price History</h1>          <!-- Buttons -->
+          <ul class="pageButtons">
+            <!-- <li class="printPageLink"><a href="javascript:window.print();">Print this page</a></li> -->
+            <li class="txtSizeCtr">
+              <span>Text size:</span>
+              <a href="javascript:resizeFont('Plus')"><img src="/resources/images/txtSizeIncr.gif" alt="Increase font size"></a>
+              <a href="javascript:resizeFont('Minus')"><img src="/resources/images/txtSizeDecr.gif" alt="Decrease font size"></a>
+            </li>
+          </ul>
+
+      <!-- Page Content -->
+      <div class="content" id="content">
+        <!-- CONTENT START -->
+<p>
+  To understand how the TSP calculates rates of return for any given period of time and determines compound annual returns,
+  read the Fact Sheet <a href="/PDF/formspubs/oc05-16w.pdf" title="File size 3829 KB (opens in a new window)"
+                         class="pdfLink">Calculating Periodic Returns and Compound Annual Returns</a>.
+</p>
+
+<div class="sharePriceHistoryButtons">
+  <form class="navigation" name="mainform" method="post" ACTION=""> 
+     <input name="reloaded" type="hidden" value="1">
+
+<script language=Javascript>
+<!--
+function isDateKey(evt) {
+  var charCode = (evt.which) ? evt.which : event.keyCode;
+  if (charCode != 47 && charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+
+  return true;
+}
+-->
+</script>
+       <div class="sharePriceHistoryButtonGroup1">
+         <!-- DATE SELECTION DIV -->
+         <div id="sharePriceHistoryRetrieve">
+           <ul class="sharePriceDate">
+             <li>Start Date:</li>
+             <li><input class="startDateInput" id="startdate" name="startdate" type="text" value="02/28/2014" maxlength=10 size=10
+            onkeypress="return isDateKey(event)" onblur="if (this.value.length!=10) { this.value='02/28/2014'; }">
+                  <a class="bordered" href="javascript:myShowCalendar2('startdate');">
+                     <img src="/resources/images/calendar.gif" alt="Open Calendar"
+                      onmouseover="this.src='/resources/images/calendar_active.gif';"
+                      onmouseout="this.src='/resources/images/calendar.gif';">
+                  </a>
+         </li>
+
+             <li>End Date:</li>
+             <li><input class="endDateInput" id="enddate" name="enddate" type="text" value="04/04/2014" maxlength=10 size=10
+            onkeypress="return isDateKey(event)" onblur="if (this.value.length!=10) { this.value='04/04/2014'; }">
+                  <a class="bordered" href="javascript:myShowCalendar2('enddate');">
+                     <img src="/resources/images/calendar.gif" alt="Open Calendar"
+                      onmouseover="this.src='/resources/images/calendar_active.gif';"
+                      onmouseout="this.src='/resources/images/calendar.gif';">
+                  </a>
+         </li>
+
+             <li><a id="retrieve" href="javascript:void(0);" onclick="doSubmit('Retrieve')">Retrieve Share Prices</a></li>
+             <li><a id="download" href="javascript:void(0);" onclick="doSubmit('CSV')">Download Share Prices</a></li>
+           </ul>
+         </div>    
+       </div>
+
+
+     <div class="clear"></div>
+
+<CENTER>
+<TABLE id="selectFunds">
+<THEAD><TR><TH colspan=10>Select Funds</TH></TR></THEAD>
+<TBODY>
+<TR align=right>
+<TD> <B>L Funds:</B> </TD>
+
+<TD>&nbsp; L Income <input type='checkbox' name='fundgroup' value='Linc' checked>&nbsp; </TD>
+
+<TD>&nbsp; L 2020 <input type='checkbox' name='fundgroup' value='L2020' checked>&nbsp; </TD>
+
+<TD>&nbsp; L 2030 <input type='checkbox' name='fundgroup' value='L2030' checked>&nbsp; </TD>
+
+<TD>&nbsp; L 2040 <input type='checkbox' name='fundgroup' value='L2040' checked>&nbsp; </TD>
+
+<TD>&nbsp; L 2050 <input type='checkbox' name='fundgroup' value='L2050' checked>&nbsp; </TD>
+</TR>
+<TR align=right>
+<TD> <B>Individual Funds:</B> </TD>
+
+<TD>&nbsp; G Fund <input type='checkbox' name='fundgroup' value='G' checked>&nbsp; </TD>
+
+<TD>&nbsp; F Fund <input type='checkbox' name='fundgroup' value='F' checked>&nbsp; </TD>
+
+<TD>&nbsp; C Fund <input type='checkbox' name='fundgroup' value='C' checked>&nbsp; </TD>
+
+<TD>&nbsp; S Fund <input type='checkbox' name='fundgroup' value='S' checked>&nbsp; </TD>
+
+<TD>&nbsp; I Fund <input type='checkbox' name='fundgroup' value='I' checked>&nbsp; </TD>
+</TR>
+<!--
+<TR align=right>
+<TD> <B>Index Funds:</B> </TD>
+
+<TD>&nbsp; LBA <input type='checkbox' name='fundgroup' value='LBA' >&nbsp; </TD>
+
+<TD>&nbsp; SP500 <input type='checkbox' name='fundgroup' value='SP500' >&nbsp; </TD>
+
+<TD>&nbsp; W4500 <input type='checkbox' name='fundgroup' value='W4500' >&nbsp; </TD>
+
+<TD>&nbsp; EAFE <input type='checkbox' name='fundgroup' value='EAFE' >&nbsp; </TD>
+</TR>
+-->
+</TBODY>
+</TABLE>
+</CENTER>
+
+     <div class="clear"></div>
+     <input name="whichButton" id="whichButton" type="hidden" value="none">
+  </form>
+</div>
+
+<script type="text/javascript">
+function doSubmit(whichButton) {
+  document.getElementById("whichButton").value = whichButton;
+  document.forms["mainform"].submit();
+}
+</script>
+
+
+
+
+
+<table class="tspStandard">
+
+<tr>
+  <th class="leadingCell">Date</th>
+<th class='packed'>L Income</th><th class='packed'>L 2020</th><th class='packed'>L 2030</th><th class='packed'>L 2040</th><th class='packed'>L 2050</th><th class='packed'>G Fund</th><th class='packed'>F Fund</th><th class='packed'>C Fund</th><th class='packed'>S Fund</th><th class='packed'>I Fund</th></tr>
+
+
+     <tr class="oddRow">
+       <td class="leadingCell">Apr 04, 2014</td>
+       <td class="packed">    16.9653
+</td>
+       <td class="packed">    22.0469
+</td>
+       <td class="packed">    23.7573
+</td>
+       <td class="packed">    25.1701
+</td>
+       <td class="packed">    14.2610
+</td>
+       <td class="packed">    14.3736
+</td>
+       <td class="packed">    16.0862
+</td>
+       <td class="packed">    24.2250
+</td>
+       <td class="packed">    34.1476
+</td>
+       <td class="packed">    25.8286
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Apr 03, 2014</td>
+       <td class="packed">    16.9981
+</td>
+       <td class="packed">    22.1633
+</td>
+       <td class="packed">    23.9233
+</td>
+       <td class="packed">    25.3789
+</td>
+       <td class="packed">    14.3945
+</td>
+       <td class="packed">    14.3727
+</td>
+       <td class="packed">    16.0321
+</td>
+       <td class="packed">    24.5316
+</td>
+       <td class="packed">    34.8268
+</td>
+       <td class="packed">    25.8819
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Apr 02, 2014</td>
+       <td class="packed">    17.0032
+</td>
+       <td class="packed">    22.1861
+</td>
+       <td class="packed">    23.9582
+</td>
+       <td class="packed">    25.4254
+</td>
+       <td class="packed">    14.4246
+</td>
+       <td class="packed">    14.3717
+</td>
+       <td class="packed">    16.0165
+</td>
+       <td class="packed">    24.5587
+</td>
+       <td class="packed">    35.1108
+</td>
+       <td class="packed">    25.9000
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Apr 01, 2014</td>
+       <td class="packed">    16.9954
+</td>
+       <td class="packed">    22.1582
+</td>
+       <td class="packed">    23.9195
+</td>
+       <td class="packed">    25.3778
+</td>
+       <td class="packed">    14.3936
+</td>
+       <td class="packed">    14.3708
+</td>
+       <td class="packed">    16.0471
+</td>
+       <td class="packed">    24.4845
+</td>
+       <td class="packed">    35.0103
+</td>
+       <td class="packed">    25.8611
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 31, 2014</td>
+       <td class="packed">    16.9713
+</td>
+       <td class="packed">    22.0768
+</td>
+       <td class="packed">    23.8055
+</td>
+       <td class="packed">    25.2359
+</td>
+       <td class="packed">    14.3031
+</td>
+       <td class="packed">    14.3699
+</td>
+       <td class="packed">    16.0656
+</td>
+       <td class="packed">    24.3115
+</td>
+       <td class="packed">    34.5813
+</td>
+       <td class="packed">    25.7566
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 28, 2014</td>
+       <td class="packed">    16.9398
+</td>
+       <td class="packed">    21.9757
+</td>
+       <td class="packed">    23.6649
+</td>
+       <td class="packed">    25.0615
+</td>
+       <td class="packed">    14.1922
+</td>
+       <td class="packed">    14.3672
+</td>
+       <td class="packed">    16.0684
+</td>
+       <td class="packed">    24.1194
+</td>
+       <td class="packed">    34.0495
+</td>
+       <td class="packed">    25.6022
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 27, 2014</td>
+       <td class="packed">    16.9244
+</td>
+       <td class="packed">    21.9213
+</td>
+       <td class="packed">    23.5912
+</td>
+       <td class="packed">    24.9724
+</td>
+       <td class="packed">    14.1344
+</td>
+       <td class="packed">    14.3663
+</td>
+       <td class="packed">    16.0926
+</td>
+       <td class="packed">    24.0069
+</td>
+       <td class="packed">    33.9377
+</td>
+       <td class="packed">    25.4510
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 26, 2014</td>
+       <td class="packed">    16.9249
+</td>
+       <td class="packed">    21.9260
+</td>
+       <td class="packed">    23.5987
+</td>
+       <td class="packed">    24.9825
+</td>
+       <td class="packed">    14.1408
+</td>
+       <td class="packed">    14.3654
+</td>
+       <td class="packed">    16.0722
+</td>
+       <td class="packed">    24.0482
+</td>
+       <td class="packed">    33.9893
+</td>
+       <td class="packed">    25.4010
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 25, 2014</td>
+       <td class="packed">    16.9367
+</td>
+       <td class="packed">    21.9657
+</td>
+       <td class="packed">    23.6590
+</td>
+       <td class="packed">    25.0626
+</td>
+       <td class="packed">    14.1902
+</td>
+       <td class="packed">    14.3646
+</td>
+       <td class="packed">    16.0392
+</td>
+       <td class="packed">    24.2174
+</td>
+       <td class="packed">    34.5032
+</td>
+       <td class="packed">    25.1907
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 24, 2014</td>
+       <td class="packed">    16.9194
+</td>
+       <td class="packed">    21.9085
+</td>
+       <td class="packed">    23.5835
+</td>
+       <td class="packed">    24.9736
+</td>
+       <td class="packed">    14.1327
+</td>
+       <td class="packed">    14.3637
+</td>
+       <td class="packed">    16.0340
+</td>
+       <td class="packed">    24.1085
+</td>
+       <td class="packed">    34.5135
+</td>
+       <td class="packed">    24.9784
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 21, 2014</td>
+       <td class="packed">    16.9349
+</td>
+       <td class="packed">    21.9688
+</td>
+       <td class="packed">    23.6703
+</td>
+       <td class="packed">    25.0834
+</td>
+       <td class="packed">    14.2031
+</td>
+       <td class="packed">    14.3610
+</td>
+       <td class="packed">    16.0230
+</td>
+       <td class="packed">    24.2260
+</td>
+       <td class="packed">    34.9160
+</td>
+       <td class="packed">    25.0623
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 20, 2014</td>
+       <td class="packed">    16.9380
+</td>
+       <td class="packed">    21.9816
+</td>
+       <td class="packed">    23.6897
+</td>
+       <td class="packed">    25.1085
+</td>
+       <td class="packed">    14.2186
+</td>
+       <td class="packed">    14.3601
+</td>
+       <td class="packed">    15.9956
+</td>
+       <td class="packed">    24.2975
+</td>
+       <td class="packed">    35.0428
+</td>
+       <td class="packed">    24.9963
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 19, 2014</td>
+       <td class="packed">    16.9286
+</td>
+       <td class="packed">    21.9579
+</td>
+       <td class="packed">    23.6574
+</td>
+       <td class="packed">    25.0694
+</td>
+       <td class="packed">    14.1954
+</td>
+       <td class="packed">    14.3593
+</td>
+       <td class="packed">    16.0009
+</td>
+       <td class="packed">    24.1510
+</td>
+       <td class="packed">    34.9679
+</td>
+       <td class="packed">    25.1258
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 18, 2014</td>
+       <td class="packed">    16.9560
+</td>
+       <td class="packed">    22.0459
+</td>
+       <td class="packed">    23.7774
+</td>
+       <td class="packed">    25.2156
+</td>
+       <td class="packed">    14.2887
+</td>
+       <td class="packed">    14.3584
+</td>
+       <td class="packed">    16.0731
+</td>
+       <td class="packed">    24.2999
+</td>
+       <td class="packed">    35.2087
+</td>
+       <td class="packed">    25.3494
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 17, 2014</td>
+       <td class="packed">    16.9277
+</td>
+       <td class="packed">    21.9541
+</td>
+       <td class="packed">    23.6505
+</td>
+       <td class="packed">    25.0591
+</td>
+       <td class="packed">    14.1891
+</td>
+       <td class="packed">    14.3575
+</td>
+       <td class="packed">    16.0560
+</td>
+       <td class="packed">    24.1250
+</td>
+       <td class="packed">    34.8004
+</td>
+       <td class="packed">    25.1845
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 14, 2014</td>
+       <td class="packed">    16.8998
+</td>
+       <td class="packed">    21.8642
+</td>
+       <td class="packed">    23.5289
+</td>
+       <td class="packed">    24.9127
+</td>
+       <td class="packed">    14.0958
+</td>
+       <td class="packed">    14.3548
+</td>
+       <td class="packed">    16.0915
+</td>
+       <td class="packed">    23.8951
+</td>
+       <td class="packed">    34.5906
+</td>
+       <td class="packed">    25.0273
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 13, 2014</td>
+       <td class="packed">    16.9051
+</td>
+       <td class="packed">    21.8826
+</td>
+       <td class="packed">    23.5522
+</td>
+       <td class="packed">    24.9386
+</td>
+       <td class="packed">    14.1125
+</td>
+       <td class="packed">    14.3539
+</td>
+       <td class="packed">    16.0942
+</td>
+       <td class="packed">    23.9623
+</td>
+       <td class="packed">    34.4756
+</td>
+       <td class="packed">    25.0853
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 12, 2014</td>
+       <td class="packed">    16.9428
+</td>
+       <td class="packed">    22.0204
+</td>
+       <td class="packed">    23.7425
+</td>
+       <td class="packed">    25.1713
+</td>
+       <td class="packed">    14.2627
+</td>
+       <td class="packed">    14.3530
+</td>
+       <td class="packed">    16.0436
+</td>
+       <td class="packed">    24.2427
+</td>
+       <td class="packed">    34.9124
+</td>
+       <td class="packed">    25.4441
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 11, 2014</td>
+       <td class="packed">    16.9454
+</td>
+       <td class="packed">    22.0404
+</td>
+       <td class="packed">    23.7685
+</td>
+       <td class="packed">    25.2007
+</td>
+       <td class="packed">    14.2838
+</td>
+       <td class="packed">    14.3522
+</td>
+       <td class="packed">    16.0106
+</td>
+       <td class="packed">    24.2289
+</td>
+       <td class="packed">    34.8044
+</td>
+       <td class="packed">    25.6916
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 10, 2014</td>
+       <td class="packed">    16.9579
+</td>
+       <td class="packed">    22.0837
+</td>
+       <td class="packed">    23.8305
+</td>
+       <td class="packed">    25.2789
+</td>
+       <td class="packed">    14.3332
+</td>
+       <td class="packed">    14.3513
+</td>
+       <td class="packed">    16.0004
+</td>
+       <td class="packed">    24.3517
+</td>
+       <td class="packed">    35.0963
+</td>
+       <td class="packed">    25.6749
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 07, 2014</td>
+       <td class="packed">    16.9625
+</td>
+       <td class="packed">    22.1102
+</td>
+       <td class="packed">    23.8689
+</td>
+       <td class="packed">    25.3273
+</td>
+       <td class="packed">    14.3655
+</td>
+       <td class="packed">    14.3486
+</td>
+       <td class="packed">    15.9926
+</td>
+       <td class="packed">    24.3614
+</td>
+       <td class="packed">    35.2319
+</td>
+       <td class="packed">    25.8190
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 06, 2014</td>
+       <td class="packed">    16.9690
+</td>
+       <td class="packed">    22.1339
+</td>
+       <td class="packed">    23.9010
+</td>
+       <td class="packed">    25.3662
+</td>
+       <td class="packed">    14.3912
+</td>
+       <td class="packed">    14.3477
+</td>
+       <td class="packed">    16.0318
+</td>
+       <td class="packed">    24.3463
+</td>
+       <td class="packed">    35.2642
+</td>
+       <td class="packed">    25.9876
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 05, 2014</td>
+       <td class="packed">    16.9594
+</td>
+       <td class="packed">    22.0972
+</td>
+       <td class="packed">    23.8522
+</td>
+       <td class="packed">    25.3088
+</td>
+       <td class="packed">    14.3531
+</td>
+       <td class="packed">    14.3468
+</td>
+       <td class="packed">    16.0589
+</td>
+       <td class="packed">    24.3002
+</td>
+       <td class="packed">    35.2755
+</td>
+       <td class="packed">    25.7807
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell">Mar 04, 2014</td>
+       <td class="packed">    16.9577
+</td>
+       <td class="packed">    22.0927
+</td>
+       <td class="packed">    23.8474
+</td>
+       <td class="packed">    25.3042
+</td>
+       <td class="packed">    14.3499
+</td>
+       <td class="packed">    14.3460
+</td>
+       <td class="packed">    16.0599
+</td>
+       <td class="packed">    24.2968
+</td>
+       <td class="packed">    35.3347
+</td>
+       <td class="packed">    25.7334
+</td>     </tr>
+
+     <tr class="oddRow">
+       <td class="leadingCell">Mar 03, 2014</td>
+       <td class="packed">    16.9088
+</td>
+       <td class="packed">    21.9226
+</td>
+       <td class="packed">    23.6110
+</td>
+       <td class="packed">    25.0131
+</td>
+       <td class="packed">    14.1633
+</td>
+       <td class="packed">    14.3451
+</td>
+       <td class="packed">    16.1157
+</td>
+       <td class="packed">    23.9308
+</td>
+       <td class="packed">    34.6226
+</td>
+       <td class="packed">    25.4137
+</td>     </tr>
+
+     <tr class="evenRow">
+       <td class="leadingCell bottomCell">Feb 28, 2014</td>
+       <td class="packed bottomCell">    16.9387
+</td>
+       <td class="packed bottomCell">    22.0398
+</td>
+       <td class="packed bottomCell">    23.7712
+</td>
+       <td class="packed bottomCell">    25.2067
+</td>
+       <td class="packed bottomCell">    14.2900
+</td>
+       <td class="packed bottomCell">    14.3424
+</td>
+       <td class="packed bottomCell">    16.0898
+</td>
+       <td class="packed bottomCell">    24.1075
+</td>
+       <td class="packed bottomCell">    34.8211
+</td>
+       <td class="packed bottomCell">    25.9031
+</td>     </tr>
+</table>
+
+
+<p>
+  The L 2010 Fund was retired on December 31, 2010.  To view the share price history of this
+  fund from August 1, 2005 through December 31, 2010, visit the
+  <a href="/investmentfunds/retiredfundsL2010/sharePriceHistoryL2010.shtml">Retired Funds</a> page.
+</p>
+
+       </div>
+          </div>
+
+         <!-- End of Page Content -->
+
+
+    </div>
+    <div style="clear:both;"></div> <!-- Required before closing  mainArea div -->
+  </div>
+   </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  <div class="pushBox"><div class="push"></div></div>
+</div>
+  <!-- Page Footer -->
+  <div class="footerBox" id="footerBox">
+    <div class="footer " id="footer">
+      <div class="footerLinks">
+        <div class="adobeLink">
+          <a class="footerLink popup" href="http://get.adobe.com/reader/" title="This page opens in a new window.">To view PDF documents, get Adobe Reader</a> <a class="footerLink popup" href="http://get.adobe.com/reader/" title="This page opens in a new window."><img class="btn" id="acrobatImg" src="/resources/images/acrobat.gif" width="17" height="17" alt="Acrobat Logo"></a>
+        </div>
+        <a class="footerLink" href="/planparticipation/about/purposeAndHistory.shtml#whoAdministers">About Us</a>
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="footerLink" href="/sitehelp/security/onlineSecurity.shtml">Security Center</a>
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="footerLink" href="/sitehelp/privacy/privacyPolicy.shtml">Privacy Policy</a>
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="footerLink" href="/other/sitemap/siteMap.shtml">Site Map</a>
+&nbsp;&nbsp;|&nbsp;&nbsp; <a class="footerLink" href="/representative/representative.shtml">Information for Agency/Service Representatives</a>
+      </div>
+      <div class="copyright" >
+        &copy;
+        <script type="text/javascript">
+        <!--
+          var d = new Date();
+
+          var curr_year = d.getFullYear();
+
+          document.write(curr_year + " Thrift Savings Plan");
+          //-->
+        </script>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+  resizeFont('');
+  addLinkIcons();
+</script>
+
+</body>
+</html>
