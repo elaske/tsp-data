@@ -3,12 +3,12 @@
 # @Author: Evan Laske
 # @Date:   2014-04-07 23:21:58
 # @Last Modified by:   Evan Laske
-# @Last Modified time: 2014-04-08 21:37:23
+# @Last Modified time: 2014-04-09 23:29:54
 
 import urllib
 import urllib2
 from bs4 import BeautifulSoup
-
+from datetime import datetime
 
 def orderedListDifference(a, b):
     """
@@ -25,20 +25,43 @@ def orderedListDifference(a, b):
     return [x for x in a if x not in b]
 
 
-all_funds = ['L Income', 'L 2010', 'L 2020', 'L 2030', 'L 2040', 'L 2050', 'G Fund', 'F Fund', 'C Fund', 'S Fund', 'I Fund']
-retired_funds = ['L 2010']
-alive_funds = orderedListDifference(all_funds, retired_funds)
-print alive_funds
+allFunds = ['L Income', 'L 2010', 'L 2020', 'L 2030', 'L 2040', 'L 2050', 'G Fund', 'F Fund', 'C Fund', 'S Fund', 'I Fund']
+retiredFunds = ['L 2010']
+aliveFunds = orderedListDifference(allFunds, retiredFunds)
+print aliveFunds
 
+form_input_names = ['startdate', 'enddate', 'Linc', 'L2020', 'L2030', 'L2040', 'L2050', 'G', 'F', 'C', 'S', 'I', 'whichButton']
 
 def main():
     print retrieveDataFromTSP()
+    print getFormPostData()
 
 def retrieveDataFromTSP():
     url = 'https://www.tsp.gov/investmentfunds/shareprice/sharePriceHistory.shtml'
 
-def getFormPostData(startDate, endDate):
-    return
+def getFormPostData(startDate='06/02/2003', endDate=datetime.now().strftime('%m/%d/%Y'), dataType=None):
+    validDataTypes = ['CSV', 'Retrieve']
+    if dataType is None:
+        dataType = 'CSV'
+    elif not any(dataType.lower() == val.lower() for val in validDataTypes):
+        raise ValueError('Given dataType value, {0}, not in valid values, {1}'.format(dataType, validDataTypes))
+
+    defaultFormData = {
+        'startdate': startDate,
+        'enddate': endDate,
+        'Linc': 'checked',
+        'L2020': 'checked',
+        'L2030': 'checked',
+        'L2040': 'checked',
+        'L2050': 'checked',
+        'G': 'checked',
+        'F': 'checked',
+        'C': 'checked',
+        'S': 'checked',
+        'I': 'checked',
+        'whichButton': dataType
+    }
+    return defaultFormData
 
 def extractDataFromSoup(soup, data_dict=None, header=None):
     """
