@@ -3,7 +3,7 @@
 # @Author: Evan Laske
 # @Date:   2014-04-07 23:21:58
 # @Last Modified by:   Evan Laske
-# @Last Modified time: 2014-04-09 23:29:54
+# @Last Modified time: 2014-04-09 23:38:25
 
 import urllib
 import urllib2
@@ -28,16 +28,21 @@ def orderedListDifference(a, b):
 allFunds = ['L Income', 'L 2010', 'L 2020', 'L 2030', 'L 2040', 'L 2050', 'G Fund', 'F Fund', 'C Fund', 'S Fund', 'I Fund']
 retiredFunds = ['L 2010']
 aliveFunds = orderedListDifference(allFunds, retiredFunds)
-print aliveFunds
+#print aliveFunds
 
 form_input_names = ['startdate', 'enddate', 'Linc', 'L2020', 'L2030', 'L2040', 'L2050', 'G', 'F', 'C', 'S', 'I', 'whichButton']
 
 def main():
-    print retrieveDataFromTSP()
-    print getFormPostData()
+    print [retrieveDataFromTSP()]
 
 def retrieveDataFromTSP():
     url = 'https://www.tsp.gov/investmentfunds/shareprice/sharePriceHistory.shtml'
+    # Encode the form data into a URL query string
+    params = urllib.urlencode(getFormPostData(startDate=datetime.now().strftime('%m/%d/%Y')))
+    # Open a virtual file pointer to the URL with the query string and read.
+    fp = urllib2.urlopen(url, params)
+    dataString = fp.read()
+    return dataString
 
 def getFormPostData(startDate='06/02/2003', endDate=datetime.now().strftime('%m/%d/%Y'), dataType=None):
     validDataTypes = ['CSV', 'Retrieve']
