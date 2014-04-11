@@ -3,7 +3,7 @@
 # @Author: Evan Laske
 # @Date:   2014-04-07 23:21:58
 # @Last Modified by:   Evan Laske
-# @Last Modified time: 2014-04-10 22:04:09
+# @Last Modified time: 2014-04-11 00:10:08
 
 import urllib
 import urllib2
@@ -11,6 +11,7 @@ import csv
 from StringIO import StringIO
 from bs4 import BeautifulSoup
 from datetime import datetime
+from timeit import timeit
 
 def orderedListDifference(a, b):
     """
@@ -32,29 +33,50 @@ retiredFunds = ['L 2010']
 aliveFunds = orderedListDifference(allFunds, retiredFunds)
 #print aliveFunds
 
-form_input_names = ['startdate', 'enddate', 'Linc', 'L2020', 'L2030', 'L2040', 'L2050', 'G', 'F', 'C', 'S', 'I', 'whichButton']
+formInputNames = ['startdate', 'enddate', 'Linc', 'L2020', 'L2030', 'L2040', 'L2050', 'G', 'F', 'C', 'S', 'I', 'whichButton']
 
 def main():
-    print [retrieveDataFromTSP()]
+    timerTest()
+    print retrieveDataFromTSP('CSV')
 
-def retrieveDataFromTSP():
+def timerTest():
+    print timeit("__main__.retrieveDataFromTSP('CSV')", setup="import __main__", number=100)
+    print timeit("__main__.retrieveDataFromTSP('Retrieve')", setup="import __main__", number=100)    
+
+def retrieveDataFromTSP(dataRequestType='CSV'):
     url = 'https://www.tsp.gov/investmentfunds/shareprice/sharePriceHistory.shtml'
-    # Encode the form data into a URL query string
-    params = urllib.urlencode(getFormPostData(startDate=datetime.now().strftime('%m/%d/%Y')))
-    # Open a virtual file pointer to the URL with the query string and read.
-    fp = urllib2.urlopen(url, params)
-    dataString = fp.read()
-    print dataString
-    print list(csv.reader(StringIO(dataString)))
-    return None
+    if dataRequestType == 'CSV':
+        # Create and encode the form data into a URL query string
+        params = urllib.urlencode(getFormPostData(startDate=datetime.now().strftime('%m/%d/%Y'), dataRequestType=dataRequestType))
+        # Open a virtual file pointer to the URL with the query string to request the file.
+        fp = urllib2.urlopen(url, params)
+        # Read the file into a string, split into lines and make list of only
+        # unempty lines. Then, parse this CSV line list as a reader into a 
+        # list of rows data from the CSV.
+        dataList = list(csv.reader([s for s in fp.read().splitlines() if s]))
+        fp.close()
+    elif dataRequestType == 'Retrieve':
+        # Create and encode the form data into a URL query string
+        params = urllib.urlencode(getFormPostData(startDate=datetime.now().strftime('%m/%d/%Y'), dataRequestType=dataRequestType))
+        # Open a virtual file pointer to the URL with the query string to request the file.
+        fp = urllib2.urlopen(url, params)
+        # Gather data in the same form we previously stored it.
+        dataList = extractDataFromSoup(BeautifulSoup(fp.read()))
+    else:
+        raise ValueError('Invalid dataRequestType')
+    return dataList
 
-def getFormPostData(startDate='06/02/2003', endDate=datetime.now().strftime('%m/%d/%Y'), dataType=None):
+def getFormPostData(startDate='06/02/2003', endDate=datetime.now().strftime('%m/%d/%Y'), dataRequestType=None):
+    # There are only two types of data that can be requested.
     validDataTypes = ['CSV', 'Retrieve']
-    if dataType is None:
-        dataType = 'CSV'
-    elif not any(dataType.lower() == val.lower() for val in validDataTypes):
-        raise ValueError('Given dataType value, {0}, not in valid values, {1}'.format(dataType, validDataTypes))
+    # If the dataType isn't specified, default to CSV
+    if dataRequestType is None:
+        dataRequestType = 'CSV'
+    # Check to make sure a specified dataType request is in the valid list.
+    elif not any(dataRequestType.lower() == val.lower() for val in validDataTypes):
+        raise ValueError('Given dataRequestType value, {0}, not in valid values, {1}'.format(dataRequestType, validDataTypes))
 
+    # The default form data includes the given parameters and all funds are requested.
     defaultFormData = {
         'startdate': startDate,
         'enddate': endDate,
@@ -68,7 +90,7 @@ def getFormPostData(startDate='06/02/2003', endDate=datetime.now().strftime('%m/
         'C': 'checked',
         'S': 'checked',
         'I': 'checked',
-        'whichButton': dataType
+        'whichButton': dataRequestType
     }
     return defaultFormData
 
