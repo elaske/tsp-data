@@ -3,10 +3,12 @@
 # @Author: Evan Laske
 # @Date:   2014-04-07 23:21:58
 # @Last Modified by:   Evan Laske
-# @Last Modified time: 2014-04-09 23:38:25
+# @Last Modified time: 2014-04-10 22:04:09
 
 import urllib
 import urllib2
+import csv
+from StringIO import StringIO
 from bs4 import BeautifulSoup
 from datetime import datetime
 
@@ -42,7 +44,9 @@ def retrieveDataFromTSP():
     # Open a virtual file pointer to the URL with the query string and read.
     fp = urllib2.urlopen(url, params)
     dataString = fp.read()
-    return dataString
+    print dataString
+    print list(csv.reader(StringIO(dataString)))
+    return None
 
 def getFormPostData(startDate='06/02/2003', endDate=datetime.now().strftime('%m/%d/%Y'), dataType=None):
     validDataTypes = ['CSV', 'Retrieve']
