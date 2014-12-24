@@ -195,7 +195,7 @@ class LineGrouping:
         """Returns a list of elements sorted by their position."""
         # Sort horizontally / vertically depending on the configuration.
         if self.isRow():
-            return sorted(self._elements, key=lambda element: element.layout.x0, reverse=True)
+            return sorted(self._elements, key=lambda element: element.layout.x0)
         elif self.isCol():
             return sorted(self._elements, key=lambda element: element.layout.y0, reverse=True)
         else:

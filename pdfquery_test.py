@@ -49,11 +49,55 @@ def groupElementsByEdges(kind, elements, edges):
             raise RuntimeError('This element belongs in no group; sad day')
         else:
             overlaps[0].add(e, update=False)
-
-    # Debug:
-    for s in [str([e.layout for e in group.sortedElements()]) for group in groups]:
-        print s
     return groups
+
+def zipGroupsIntoTable(rows, columns):
+    # Sort the rows and columns; columns increase left to right, rows increase bottom to top
+    rows = sorted(rows, key=lambda r: r.minExtreme, reverse=True)
+    columns = sorted(columns, key=lambda c: c.minExtreme)
+
+    # Pre-size the array so we're not resizing in a loop
+    table = [ ([None] * len(columns)) for row in xrange(len(rows)) ]
+
+    # Start with all the rows (we'll use it as essentially a list of elements)
+    for i, row in enumerate(rows):
+        # For each element in the row
+        for e in row.sortedElements():
+            # Check to see what column it is also in:
+            col = [c for c in columns if e in c.sortedElements()]
+            # print col
+            if col:
+                # print 'Found at {}, {}; already there: {}'.format(i, columns.index(col[0]), table[i][columns.index(col[0])])
+                # Put the element into the table.
+                if not table[i][columns.index(col[0])]:
+                    # print 'does not exist'
+                    table[i][columns.index(col[0])] = [e]
+                else:
+                    table[i][columns.index(col[0])].append(e)
+            else:
+                raise RuntimeError('There was no matching column for this element.')
+    return table
+
+def condenseElements(table):
+    newTable = []
+    for r in table:
+        l = []
+        for elements in r:
+            # If it was a list, let's condense them down.
+            if hasattr(elements, '__iter__'):
+                l.append(''.join([str(e.layout.get_text()) for e in sorted(elements, key=lambda e: e.layout.y0, reverse=True)]))
+            else:
+                l.append(elements)
+        # Remove unnecessary whitespace
+        for i,x in enumerate(l):
+            if x:
+                l[i] = ' '.join(x.split())
+        newTable.append(l)
+    return newTable
+
+def printTable(table):
+    for r in table:
+        print r
 
 def findAccountSummary(pdf):
     """
@@ -102,6 +146,8 @@ def findAccountSummary(pdf):
 
     print elements
     print len(elements)
+    print dir(elements[0].layout)
+    print elements[0].text
 
     # groups = groupElements(elements, 'col')
 
@@ -116,7 +162,7 @@ def findAccountSummary(pdf):
     yh = y_boundaries, y_item_counts = segment_histogram(y_segments)
 
     print x_boundaries
-    print x_item_counts
+    print len([x for x in x_item_counts if x > 2])
 
     print x_item_counts.count(0)
 
@@ -135,8 +181,20 @@ def findAccountSummary(pdf):
     # for a,b in zip(row_edges, row_edges[1:]):
     #     print a, b, b-a
 
-    groupElementsByEdges('col',elements,col_edges)
-    groupElementsByEdges('row',elements,row_edges)
+    columns = groupElementsByEdges('col',elements,col_edges)
+    rows = groupElementsByEdges('row',elements,row_edges)
+
+    table = zipGroupsIntoTable(rows, columns)
+
+    table = condenseElements(table)
+
+    printTable(table)
+
+    # Debug:
+    # for s in [str([e.layout for e in group.sortedElements()]) for group in columns]:
+    #     print s
+    # for s in [str([e.layout for e in group.sortedElements()]) for group in rows]:
+    #     print s
 
 def main():
     """
