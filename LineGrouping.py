@@ -35,6 +35,13 @@ class LineGrouping:
 
         self._elements = [element]
 
+    def __init__(self, arg, amin, amax):
+        self._type = arg.lower()
+        self._minExtreme = amin
+        self._maxExtreme = amax
+        self._center = (self._maxExtreme - self._minExtreme) / 2 + self._minExtreme
+        self._elements = []
+
     def center():
         doc = "The center of the LineGrouping."
         def fget(self):
@@ -85,45 +92,100 @@ class LineGrouping:
         else:
             return False
 
-    def overlaps(self, element):
-        """Checks whether the given PDF element's bounding box overlaps with this LineGrouping."""
-        # Treat the configuration of the LineGrouping differently
-        if self.isCol():
-            element_center = (element.layout.x1 - element.layout.x0) / 2 + element.layout.x0
-        if self.isRow():
-            element_center = (element.layout.y1 - element.layout.y0) / 2 + element.layout.y0
+    def centerOverlaps(self, element):
+        """Checks whether the given PDF element's bounding box center overlaps with this LineGrouping."""
+        element_center = self.elementCenter(element)
         # Do the real checking 
         if element_center >= self._minExtreme and element_center <= self._maxExtreme:
             return True
         else:
             return False
 
-    def add(self, element):
+    def minorCenterOverlaps(self, element):
+        """
+        Checks to see if the element overlaps the LineGrouping and 
+        the centerline is on the left of the grouping's center.
+        """
+        element_center = self.elementCenter(element)
+        # Do the real checking 
+        if element_center >= self._minExtreme and element_center <= self._maxExtreme \
+            and element_center <= self._center:
+            return True
+        else:
+            return False
+
+
+    def majorCenterOverlaps(self, element):
+        """
+        Checks to see if the element overlaps the LineGrouping and 
+        the centerline is on the right of the grouping's center.
+        """
+        element_center = self.elementCenter(element)
+        # Do the real checking 
+        if element_center >= self._minExtreme and element_center <= self._maxExtreme \
+            and element_center >= self._center:
+            return True
+        else:
+            return False
+
+    def elementCenter(self, element):
+        # Treat the configuration of the LineGrouping differently
+        if self.isCol():
+            element_center = (element.layout.x1 - element.layout.x0) / 2 + element.layout.x0
+        elif self.isRow():
+            element_center = (element.layout.y1 - element.layout.y0) / 2 + element.layout.y0
+        else:
+            raise TypeError('Not column or row type.')
+        return element_center
+
+    def encapsulatesElement(self, element):
+        """Checks to see if the given element is encapsulated by the extremes of this grouping."""
+        if self.isCol():
+            return self._minExtreme <= element.layout.x0 and self._maxExtreme >= element.layout.x1
+        elif self.isRow():
+            return self._minExtreme <= element.layout.y0 and self._minExtreme >= element.layout.y1
+        else:
+            raise TypeError('Not column or row type.')
+
+    def allEncapsulateElement(self, element):
+        """Checks to see if the given element is encapsulated by all of this grouping's elements"""
+        if self.isCol():
+            return any( (e.layout.x0 <= element.layout.x0 and e.layout.x1 >= element.layout.x1) for e in self._elements )
+        elif self.isRow():
+            return any( (e.layout.y0 <= element.layout.y0 and e.layout.y1 >= element.layout.y1) for e in self._elements )
+        else:
+            raise TypeError('Not column or row type.')
+
+
+    def add(self, element, update=True):
         """Adds the current element to the LineGrouping list."""
         # Add it to the list of elements
         self._elements.append(element)
-        # Update maxima / minima and centerline
-        if self.isRow():
-            if element.layout.x0 < self._minExtreme:
-                self._minExtreme = element.layout.x0
-            if element.layout.x1 > self._maxExtreme:
-                self._maxExtreme = element.layout.x1
-            if element.layout.x0 < self._minExtreme or element.layout.x1 > self._maxExtreme:
-                self._center = (self._maxExtreme - self._minExtreme) / 2 + self._minExtreme
-        if self.isCol():
-            if element.layout.y0 < self._minExtreme:
-                self._minExtreme = element.layout.y0
-            if element.layout.y1 > self._maxExtreme:
-                self._maxExtreme = element.layout.y1
-            if element.layout.y0 < self._minExtreme or element.layout.y1 > self._maxExtreme:
-                self._center = (self._maxExtreme - self._minExtreme) / 2 + self._minExtreme
+        # Update maxima / minima and centerline        
+        if update:
+            if self.isRow():
+                if element.layout.x0 < self._minExtreme:
+                    self._minExtreme = element.layout.x0
+                if element.layout.x1 > self._maxExtreme:
+                    self._maxExtreme = element.layout.x1
+                if element.layout.x0 < self._minExtreme or element.layout.x1 > self._maxExtreme:
+                    self._center = (self._maxExtreme - self._minExtreme) / 2 + self._minExtreme
+            elif self.isCol():
+                if element.layout.y0 < self._minExtreme:
+                    self._minExtreme = element.layout.y0
+                if element.layout.y1 > self._maxExtreme:
+                    self._maxExtreme = element.layout.y1
+                if element.layout.y0 < self._minExtreme or element.layout.y1 > self._maxExtreme:
+                    self._center = (self._maxExtreme - self._minExtreme) / 2 + self._minExtreme
+            else:
+                raise TypeError('Not column or row type.')
 
     def checkAndAdd(self, element):
         """
         Checks whether or not this element should be added and does so if so.
         Returns True if added, False if not added.
         """
-        if self.overlaps(element):
+        if self.centerOverlaps(element):
             self.add(element)
             return True
         else:
@@ -133,7 +195,9 @@ class LineGrouping:
         """Returns a list of elements sorted by their position."""
         # Sort horizontally / vertically depending on the configuration.
         if self.isRow():
-            return sorted(self._elements, key=lambda element: element.layout.x0)
-        if self.isCol():
-            return sorted(self._elements, key=lambda element: element.layout.y0)
+            return sorted(self._elements, key=lambda element: element.layout.x0, reverse=True)
+        elif self.isCol():
+            return sorted(self._elements, key=lambda element: element.layout.y0, reverse=True)
+        else:
+            raise TypeError('Not column or row type.')
 

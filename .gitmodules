@@ -1,3 +1,6 @@
 [submodule "pdfquery"]
 	path = pdfquery
 	url = /Users/elaske/Documents/pdfquery
+[submodule "pdftables"]
+	path = pdftables
+	url = https://github.com/drj11/pdftables.git

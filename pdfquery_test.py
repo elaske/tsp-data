@@ -10,6 +10,10 @@ import sys
 import pdfquery
 from LineGrouping import LineGrouping
 
+from pdftables.line_segments import LineSegment, histogram_segments, segment_histogram, above_threshold
+from pdftables.pdftables import compute_cell_edges
+from pdftables.boxes import Box, Rectangle
+
 # from pdfquery.cache import FileCache, DummyCache
 
 def groupElements(elements, kind):
@@ -21,17 +25,35 @@ def groupElements(elements, kind):
     groups = []
     for e in elements:
         # Grab an element, check to see if it overlaps any X in the list. 
-        overlaps = [group for group in groups if group.overlaps(e)]
+        overlaps = [group for group in groups if group.centerOverlaps(e)]
         # If it doesn't match any of them / empty list of groups
         if len(overlaps) == 0:
             # Create a new one for us to use
             groups.append( LineGrouping(kind, e) )
             print e.layout
         else:
+            # if overlaps[0].allEncapsulateElement(e):
             # default to the first one even if there are more than one.
             overlaps[0].checkAndAdd(e)
     return groups
 
+def groupElementsByEdges(kind, elements, edges):
+
+    # Create the line groupings to start throwing things together into
+    groups = [LineGrouping(kind, a, b) for a,b in zip(edges, edges[1:])]
+
+    # Grab an element, check to see if its center belongs in the list and add it. 
+    for e in elements:
+        overlaps = [group for group in groups if group.centerOverlaps(e)]
+        if len(overlaps) == 0:
+            raise RuntimeError('This element belongs in no group; sad day')
+        else:
+            overlaps[0].add(e, update=False)
+
+    # Debug:
+    for s in [str([e.layout for e in group.sortedElements()]) for group in groups]:
+        print s
+    return groups
 
 def findAccountSummary(pdf):
     """
@@ -81,7 +103,40 @@ def findAccountSummary(pdf):
     print elements
     print len(elements)
 
-    print groupElements(elements, 'col')
+    # groups = groupElements(elements, 'col')
+
+    # #print groups
+    # for g in groups:
+    #     print [str(e.layout).split("'")[1] for e in g.sortedElements()]
+
+    x_segments = [LineSegment(e.layout.x0, e.layout.x1, e) for e in elements]
+    y_segments = [LineSegment(e.layout.y0, e.layout.y1, e) for e in elements]
+
+    xh = x_boundaries, x_item_counts = segment_histogram(x_segments)
+    yh = y_boundaries, y_item_counts = segment_histogram(y_segments)
+
+    print x_boundaries
+    print x_item_counts
+
+    print x_item_counts.count(0)
+
+    bb = Box(Rectangle(left, bottom, right, top))
+
+    xh = above_threshold(xh, 3)
+    yh = above_threshold(yh, 1)
+
+    col_edges, row_edges = compute_cell_edges(bb, xh, yh, None)
+    print len(col_edges), col_edges
+    print len(row_edges), row_edges
+
+    # for a,b in zip(col_edges, col_edges[1:]):
+    #     print a, b, b-a
+
+    # for a,b in zip(row_edges, row_edges[1:]):
+    #     print a, b, b-a
+
+    groupElementsByEdges('col',elements,col_edges)
+    groupElementsByEdges('row',elements,row_edges)
 
 def main():
     """
