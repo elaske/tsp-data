@@ -115,8 +115,11 @@ def findTableByName(pdf, name, marker):
     # Find all the marker locations within the document by page
     # TODO: Change this to only have to look at the pages we find titles on?
     markers = [pdf.pq('LTPage[page_index="{}"] LTTextLineHorizontal:contains("{}")'.format(i, marker)) for i in range(len(pdf._pages))]
+    # print markers
+
     # Match up the marker locations and the table title locations
     pairs = [(x,y) for x,y in zip(table_titles,markers) if x and y]
+    # print pairs
     # If none were found, exit gracefully
     if not pairs:
         return None
@@ -125,6 +128,7 @@ def findTableByName(pdf, name, marker):
     # Otherwise, I guess we'll have to do it for all of them...
     for i, pair in enumerate(zip(table_titles,markers)):
         titles, markers = pair
+        # print i, titles, markers
         # Handle each title individually
         for title in titles:
             # The table's top left is at x0, y0 of the title label (not including the title itself)
@@ -132,11 +136,13 @@ def findTableByName(pdf, name, marker):
             left = title.layout.x0
             # If there is more than one ending marker in the list 
             if len(markers) > 1:
+                # print [m.layout.bbox for m in markers]
                 bottom = 0
                 # Compare all the markers and find the closest one.
                 for e in markers:
                     # do the actual updating of the bottom of the bbox
-                    if abs(top - float(e.layout.y0)) < abs(top - bottom):
+                    if abs(top - float(e.layout.y0)) < abs(top - bottom) \
+                        and top - float(e.layout.y0) > 0:
                         bottom = float(e.layout.y0)
             else:
                 bottom = markers[0].layout.y0
@@ -206,8 +212,18 @@ def main():
     pdf.load()
 
     tables = findTableByName(pdf, 'YOUR QUARTERLY ACCOUNT SUMMARY', 'Total')
+    tables += findTableByName(pdf, 'YOUR TRANSACTION DETAIL BY SOURCE', 'Ending Balance')
+    tables += findTableByName(pdf, 'L 2050 Fund', 'Ending Balance')
+    tables += findTableByName(pdf, 'L 2040 Fund', 'Ending Balance')
+    tables += findTableByName(pdf, 'Government Securities Investment (G) Fund', 'Ending Balance')
+    tables += findTableByName(pdf, 'Fixed Income Index Investment (F) Fund', 'Ending Balance')
+    tables += findTableByName(pdf, 'Common Stock Index Investment (C) Fund', 'Ending Balance')
+    tables += findTableByName(pdf, 'Small Capitalization Stock Index Investment (S) Fund', 'Ending Balance')
+    tables += findTableByName(pdf, 'International Stock Index Investment (I) Fund', 'Ending Balance')
+
     # print tables
     for t in tables:
+        print
         elements = getTableElements(pdf, t)
         # print len(elements)
         rows, columns = binTableElements(t, elements)
