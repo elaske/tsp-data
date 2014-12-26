@@ -114,7 +114,7 @@ def extractDataFromSoup(soup, data_dict=None, header=None):
     # Make sure there's a tsp table found
     if tsp_table:
         # Retrieve all of the data rows from this table.
-        tsp_table_rows = tsp_table[0].tbody('tr')
+        tsp_table_rows = tsp_table[0].findAll('tr')
     else:
         print 'ERROR: No tsp_table found'
         print 'Soup:\n{0}'.format(tsp_table)
