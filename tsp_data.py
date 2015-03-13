@@ -10,7 +10,7 @@ import urllib2
 import csv
 from StringIO import StringIO
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import date, datetime
 from timeit import timeit
 
 def orderedListDifference(a, b):
@@ -36,29 +36,33 @@ aliveFunds = orderedListDifference(allFunds, retiredFunds)
 formInputNames = ['startdate', 'enddate', 'Linc', 'L2020', 'L2030', 'L2040', 'L2050', 'G', 'F', 'C', 'S', 'I', 'whichButton']
 
 def main():
-    timerTest()
-    print retrieveDataFromTSP('CSV')
+    # timerTest()
+    print retrieveDataFromTSP('CSV', date(2015,3,12))
     print retrieveDataFromTSP('Retrieve')
 
 def timerTest():
     print timeit("__main__.retrieveDataFromTSP('CSV')", setup="import __main__", number=100)
     print timeit("__main__.retrieveDataFromTSP('Retrieve')", setup="import __main__", number=100)    
 
-def retrieveDataFromTSP(dataRequestType='CSV'):
+def retrieveDataFromTSP(dataRequestType='CSV', dateRequest=date.today()):
     url = 'https://www.tsp.gov/investmentfunds/shareprice/sharePriceHistory.shtml'
     if dataRequestType == 'CSV':
         # Create and encode the form data into a URL query string
-        params = urllib.urlencode(getFormPostData(startDate=datetime.now().strftime('%m/%d/%Y'), dataRequestType=dataRequestType))
+        params = urllib.urlencode(getFormPostData(startDate=dateRequest.strftime('%m/%d/%Y'), endDate=dateRequest.strftime('%m/%d/%Y'), dataRequestType=dataRequestType))
         # Open a virtual file pointer to the URL with the query string to request the file.
         fp = urllib2.urlopen(url, params)
         # Read the file into a string, split into lines and make list of only
         # unempty lines. Then, parse this CSV line list as a reader into a 
         # list of rows data from the CSV.
         dataList = list(csv.reader([s for s in fp.read().splitlines() if s]))
+        # Remove leading and trailing whitespace
+        dataList = [[y.strip() for y in x] for x in dataList]
+        # Put in (data_dict, header) format.
+        dataList = ( { datetime.strptime(d[0],'%Y-%m-%d').date(): [float(f) for f in d[1:-1]] for d in dataList[1:] }, dataList[0][1:-1] )
         fp.close()
     elif dataRequestType == 'Retrieve':
         # Create and encode the form data into a URL query string
-        params = urllib.urlencode(getFormPostData(startDate=datetime.now().strftime('%m/%d/%Y'), dataRequestType=dataRequestType))
+        params = urllib.urlencode(getFormPostData(startDate=dateRequest.strftime('%m/%d/%Y'), endDate=dateRequest.strftime('%m/%d/%Y'), dataRequestType=dataRequestType))
         # Open a virtual file pointer to the URL with the query string to request the file.
         fp = urllib2.urlopen(url, params)
         # Gather data in the same form we previously stored it.
@@ -67,7 +71,7 @@ def retrieveDataFromTSP(dataRequestType='CSV'):
         raise ValueError('Invalid dataRequestType')
     return dataList
 
-def getFormPostData(startDate='06/02/2003', endDate=datetime.now().strftime('%m/%d/%Y'), dataRequestType=None):
+def getFormPostData(startDate='06/02/2003', endDate=date.today().strftime('%m/%d/%Y'), dataRequestType=None):
     # There are only two types of data that can be requested.
     validDataTypes = ['CSV', 'Retrieve']
     # If the dataType isn't specified, default to CSV
@@ -127,13 +131,14 @@ def extractDataFromSoup(soup, data_dict=None, header=None):
         #print row
         # Save the header strings
         if row('th'):
-            ret_header = [c.string.strip() for c in row('th')]
+            ret_header = [str(c.string.strip()) for c in row('th')][1:]
             #ret_data[ret_header[0]] = ret_header[1:-1]
             #print len(ret_header), ret_header
         else:
             row_data = [c.string.strip() for c in row('td')]
+            dateKey = datetime.strptime(row_data[0], '%b %d, %Y').date()
             #print len(row_data), row_data
-            ret_data[row_data[0]] = row_data[1:-1]
+            ret_data[dateKey] = [float(f) for f in row_data[1:]]
 
     if data_dict:
         # If the data_dict value was specified, merge the two dictionaries
